@@ -4,9 +4,12 @@ import Challenge from "../models/Challenge.js";
 import User from "../models/User.js";
 import Reward from "../models/Reward.js";
 import { requireAuth, requireRole } from "../middleware/auth.js";
+import { invokeContract, addressScVal, u64ScVal, horizon, NETWORK_PASSPHRASE } from "../config/stellar.js";
 import { reviewWithGemini } from "../utils/aiReviewer.js";
+import { Keypair, TransactionBuilder, BASE_FEE, Operation, Asset } from "@stellar/stellar-sdk";
 
 const router = Router();
+const CONTRACT_ID = process.env.SKILLPAY_CONTRACT_ID;
 
 // POST /api/submissions - learner submits a project for a challenge
 router.post("/", requireAuth, requireRole("learner"), async (req, res, next) => {
@@ -102,11 +105,30 @@ router.patch("/:id/approve", requireAuth, requireRole("mentor"), async (req, res
       return res.status(409).json({ error: "Submission has already been reviewed" });
     }
 
+    const mentor = await User.findById(req.user.id).select("+walletSecret");
     const learner = await User.findById(submission.userId);
 
-    const { txHash } = req.body;
-    if (!txHash) {
-      return res.status(400).json({ error: "txHash is required from the frontend" });
+    let txHash;
+    if (CONTRACT_ID && mentor?.walletSecret && challenge.onChainId !== null && challenge.onChainId !== undefined) {
+      // Soroban path
+      try {
+        const result = await invokeContract(
+          "release_reward",
+          [
+            addressScVal(mentor.walletAddress),
+            u64ScVal(challenge.onChainId),
+            addressScVal(learner.walletAddress),
+          ],
+          mentor.walletSecret
+        );
+        txHash = result.hash;
+      } catch (sorobanErr) {
+        console.warn("[approve] Soroban failed, falling back to XLM payment:", sorobanErr.message);
+        txHash = await sendRewardPayment(mentor, learner.walletAddress, challenge.reward);
+      }
+    } else {
+      // No deployed contract — send real XLM to learner as reward
+      txHash = await sendRewardPayment(mentor, learner.walletAddress, challenge.reward);
     }
 
     submission.status = "approved";
@@ -120,7 +142,7 @@ router.patch("/:id/approve", requireAuth, requireRole("mentor"), async (req, res
       challengeId: challenge._id,
       learnerId: learner._id,
       amount: challenge.reward,
-      txHash: txHash,
+      txHash,
       walletAddress: learner.walletAddress,
     });
 
@@ -128,11 +150,33 @@ router.patch("/:id/approve", requireAuth, requireRole("mentor"), async (req, res
     learner.challengesCompleted += 1;
     await learner.save();
 
-    res.json({ submission, txHash: txHash });
+    res.json({ submission, txHash });
   } catch (err) {
     next(err);
   }
 });
+
+async function sendRewardPayment(mentor, learnerAddress, rewardXLM) {
+  const keypair = Keypair.fromSecret(mentor.walletSecret);
+  const account = await horizon.loadAccount(keypair.publicKey());
+  const tx = new TransactionBuilder(account, {
+    fee: BASE_FEE,
+    networkPassphrase: NETWORK_PASSPHRASE,
+  })
+    .addOperation(
+      Operation.payment({
+        destination: learnerAddress,
+        asset: Asset.native(),
+        amount: String(rewardXLM),
+      })
+    )
+    .addMemo({ type: "text", value: "SkillPay Reward" })
+    .setTimeout(30)
+    .build();
+  tx.sign(keypair);
+  const result = await horizon.submitTransaction(tx);
+  return result.hash;
+}
 
 // PATCH /api/submissions/:id/reject
 router.patch("/:id/reject", requireAuth, requireRole("mentor"), async (req, res, next) => {

@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { useAuth } from "../../../lib/auth";
 import { api } from "../../../lib/api";
 import { track } from "../../../lib/analytics";
-import { createAndFundChallenge, invokeContractFromFrontend, addressScVal, u64ScVal, getBalance } from "../../../lib/stellar";
+import { getBalance } from "../../../lib/stellar";
 
 export default function ChallengeDetailPage() {
   const { id } = useParams();
@@ -134,8 +134,8 @@ function FundButton({ challenge, onFunded }) {
     setFunding(true);
     setError("");
     try {
-      const { onChainId, txHash } = await createAndFundChallenge(challenge.title, challenge.reward);
-      const { challenge: updatedChallenge } = await api.fundChallenge(challenge._id, { onChainId, txHash });
+      // Backend handles signing — works with or without deployed contract
+      const { challenge: updatedChallenge, txHash } = await api.fundChallenge(challenge._id);
       onFunded(updatedChallenge);
     } catch (err) {
       setError(err.message);
@@ -147,7 +147,8 @@ function FundButton({ challenge, onFunded }) {
   return (
     <div className="border border-signal-gold/40 rounded-sm p-5 mb-10">
       <p className="text-sm text-bone-dim mb-3">
-        This challenge isn't funded yet. Connect your Freighter wallet to escrow the reward on-chain so learners know the payout is real before they start working.
+        This challenge isn't funded yet. Click below to escrow the reward on-chain
+        so learners know the payout is real before they start working.
       </p>
       {error && <p className="text-signal-rust text-sm mb-3">{error}</p>}
       <button
@@ -245,17 +246,11 @@ function MentorReview({ challenge }) {
       .finally(() => setLoading(false));
   }, [challenge._id]);
 
-  async function handleApprove(submissionId, learnerWalletAddress) {
+  async function handleApprove(submissionId) {
     setActioningId(submissionId);
     setError("");
     try {
-      const { hash } = await invokeContractFromFrontend("release_reward", [
-        addressScVal(challenge.mentor.walletAddress), // Needs mentor wallet address logic here! Wait, the wallet connected should be the mentor.
-        u64ScVal(challenge.onChainId),
-        addressScVal(learnerWalletAddress),
-      ]);
-
-      const { submission } = await api.approveSubmission(submissionId, hash);
+      const { submission } = await api.approveSubmission(submissionId);
       track("reward_claimed", { challengeId: challenge._id, submissionId });
       setSubmissions((prev) => prev.map((s) => (s._id === submissionId ? submission : s)));
     } catch (err) {
@@ -345,7 +340,7 @@ function MentorReview({ challenge }) {
             {s.status === "pending" && (
               <div className="flex gap-2 mt-4">
                 <button
-                  onClick={() => handleApprove(s._id, s.userId?.walletAddress)}
+                  onClick={() => handleApprove(s._id)}
                   disabled={actioningId === s._id}
                   className="bg-signal-gold text-ink px-3 py-1.5 rounded-sm text-xs font-medium hover:bg-signal-gold/90 transition-colors disabled:opacity-50"
                 >

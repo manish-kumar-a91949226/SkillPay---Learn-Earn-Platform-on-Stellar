@@ -42,12 +42,12 @@ export const api = {
   getChallenges: (params = "") => request(`/challenges${params}`),
   getChallenge: (id) => request(`/challenges/${id}`),
   createChallenge: (payload) => request("/challenges", { method: "POST", body: payload }),
-  fundChallenge: (id, payload) => request(`/challenges/${id}/fund`, { method: "POST", body: payload }),
+  fundChallenge: (id) => request(`/challenges/${id}/fund`, { method: "POST" }),
 
   submitProject: (payload) => request("/submissions", { method: "POST", body: payload }),
   mySubmissions: () => request("/submissions/mine"),
   challengeSubmissions: (challengeId) => request(`/submissions/challenge/${challengeId}`),
-  approveSubmission: (id, txHash) => request(`/submissions/${id}/approve`, { method: "PATCH", body: { txHash } }),
+  approveSubmission: (id) => request(`/submissions/${id}/approve`, { method: "PATCH" }),
   rejectSubmission: (id) => request(`/submissions/${id}/reject`, { method: "PATCH" }),
 
   myProfile: () => request("/profile/me"),
