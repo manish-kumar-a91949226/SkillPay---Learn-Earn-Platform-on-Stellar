@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import { AuthProvider } from "../lib/auth";
 import AnalyticsInit from "../components/AnalyticsInit";
 import NavBar from "../components/NavBar";
+import FeedbackWidget from "../components/FeedbackWidget";
 
 export const metadata = {
   title: "SkillPay — Learn. Prove it. Get paid.",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           <AnalyticsInit />
           <NavBar />
           <main>{children}</main>
+          <FeedbackWidget />
         </AuthProvider>
       </body>
     </html>
