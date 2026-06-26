@@ -34,33 +34,8 @@ A production-ready blockchain-powered Learn & Earn platform built on the Stellar
 
 ---
 
-## ✅ Level 4 Requirements Checklist
 
-### 1. Production MVP
-- [x] **Fully functional production-ready MVP:** End-to-end flow works flawlessly. Users can sign up, post challenges, fund them via Freighter, submit work, and approve payouts.
-- [x] **Stable frontend & architecture:** Next.js App Router for frontend, Express.js for backend, and MongoDB Atlas for database. Stellar SDK integrated for all chain interactions.
-- [x] **Mobile responsive UI:** Tailwind CSS ensures the platform works perfectly on mobile devices.
-- [x] **Loading states and error handling:** Handled globally with skeleton loaders, disabled button states during transactions, and explicit error messages (e.g. "Install Freighter").
-
-### 2. User Onboarding & Feedback
-- [x] **Minimum 10 real users onboarded:** See user list below. Every learner account automatically generates and funds a Stellar Testnet wallet via Friendbot.
-- [x] **Proof of wallet interactions:** "Fund Challenge" and "Approve Payout" trigger real Freighter wallet prompts, proving escrow and payout on the Stellar Testnet (verifiable via Stellar Explorer links on the frontend).
-- [x] **Basic user feedback collection:** Built-in floating feedback widget integrated directly into the UI (stores feedback to DB). See feedback summary below.
-
-### 3. Product Quality
-- [x] **Production deployment:** Live on Vercel (Frontend) and Render (Backend).
-- [x] **Monitoring and analytics:** Configured with analytics tracking for key conversion events (signups, challenge views, submissions, payouts).
-- [x] **Optimized user experience:** Real-time balance polling, fast navigation, and "ledger-style" dark mode UI.
-- [x] **Proper project structure:** Clean separation between `web/` (frontend) and `server/` (backend).
-
-### 4. Technical Standards
-- [x] **Smart contracts / On-chain escrow:** Implemented real testnet XLM transfers signed by Freighter for escrow and payouts.
-- [x] **Minimum 15+ meaningful commits:** Verified in GitHub history.
-- [x] **Public GitHub repository:** This repository is public and accessible.
-
----
-
-## 👥 User Onboarding (10+ Users)
+## 👥 User Onboarding
 
 Every learner is instantly onboarded with a Stellar Testnet wallet upon signup. Mentors connect their own Freighter wallets.
 
