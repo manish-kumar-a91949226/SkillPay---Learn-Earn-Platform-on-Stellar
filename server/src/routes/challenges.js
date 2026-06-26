@@ -18,6 +18,7 @@ import {
   BASE_FEE,
   Operation,
   Asset,
+  Memo,
 } from "@stellar/stellar-sdk";
 
 const router = Router();
@@ -166,7 +167,7 @@ async function sendEscrowTransfer(mentor, rewardXLM) {
         amount: String(rewardXLM),
       })
     )
-    .addMemo({ type: "text", value: "SkillPay Escrow" })
+    .addMemo(Memo.text("SkillPay Escrow"))
     .setTimeout(30)
     .build();
 

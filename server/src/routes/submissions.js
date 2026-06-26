@@ -6,7 +6,7 @@ import Reward from "../models/Reward.js";
 import { requireAuth, requireRole } from "../middleware/auth.js";
 import { invokeContract, addressScVal, u64ScVal, horizon, NETWORK_PASSPHRASE } from "../config/stellar.js";
 import { reviewWithGemini } from "../utils/aiReviewer.js";
-import { Keypair, TransactionBuilder, BASE_FEE, Operation, Asset } from "@stellar/stellar-sdk";
+import { Keypair, TransactionBuilder, BASE_FEE, Operation, Asset, Memo } from "@stellar/stellar-sdk";
 
 const router = Router();
 const CONTRACT_ID = process.env.SKILLPAY_CONTRACT_ID;
@@ -170,7 +170,7 @@ async function sendRewardPayment(mentor, learnerAddress, rewardXLM) {
         amount: String(rewardXLM),
       })
     )
-    .addMemo({ type: "text", value: "SkillPay Reward" })
+    .addMemo(Memo.text("SkillPay Reward"))
     .setTimeout(30)
     .build();
   tx.sign(keypair);
