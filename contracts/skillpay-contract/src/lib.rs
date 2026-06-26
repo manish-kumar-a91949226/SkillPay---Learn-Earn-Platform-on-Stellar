@@ -25,10 +25,10 @@ use soroban_sdk::{
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub enum ChallengeStatus {
-    Open,    // created, not yet funded
-    Funded,  // reward pool escrowed in contract
-    Paid,    // reward released to a learner
-    Closed,  // mentor cancelled before funding
+    Open,   // created, not yet funded
+    Funded, // reward pool escrowed in contract
+    Paid,   // reward released to a learner
+    Closed, // mentor cancelled before funding
 }
 
 #[contracttype]
@@ -85,11 +85,7 @@ impl SkillPayContract {
             return Err(ContractError::InvalidAmount);
         }
 
-        let next_id: u64 = env
-            .storage()
-            .instance()
-            .get(&DataKey::NextId)
-            .unwrap_or(0);
+        let next_id: u64 = env.storage().instance().get(&DataKey::NextId).unwrap_or(0);
 
         let challenge = Challenge {
             id: next_id,
@@ -104,11 +100,15 @@ impl SkillPayContract {
         env.storage()
             .persistent()
             .set(&DataKey::Challenge(next_id), &challenge);
-        env.storage()
-            .persistent()
-            .extend_ttl(&DataKey::Challenge(next_id), BUMP_THRESHOLD, CHALLENGE_TTL_LEDGERS);
+        env.storage().persistent().extend_ttl(
+            &DataKey::Challenge(next_id),
+            BUMP_THRESHOLD,
+            CHALLENGE_TTL_LEDGERS,
+        );
 
-        env.storage().instance().set(&DataKey::NextId, &(next_id + 1));
+        env.storage()
+            .instance()
+            .set(&DataKey::NextId, &(next_id + 1));
 
         env.events().publish(
             (Symbol::new(&env, "challenge_created"), mentor),
@@ -122,7 +122,11 @@ impl SkillPayContract {
     /// have approved this contract to spend `reward_amount` of `token`
     /// beforehand (standard SAC `approve` flow), or simply require_auth on a
     /// direct transfer invocation from the mentor's signed transaction.
-    pub fn fund_reward_pool(env: Env, mentor: Address, challenge_id: u64) -> Result<(), ContractError> {
+    pub fn fund_reward_pool(
+        env: Env,
+        mentor: Address,
+        challenge_id: u64,
+    ) -> Result<(), ContractError> {
         mentor.require_auth();
 
         let mut challenge: Challenge = env
@@ -139,7 +143,11 @@ impl SkillPayContract {
         }
 
         let token_client = token::Client::new(&env, &challenge.token);
-        token_client.transfer(&mentor, &env.current_contract_address(), &challenge.reward_amount);
+        token_client.transfer(
+            &mentor,
+            &env.current_contract_address(),
+            &challenge.reward_amount,
+        );
 
         challenge.status = ChallengeStatus::Funded;
         env.storage()
@@ -210,7 +218,11 @@ impl SkillPayContract {
     }
 
     /// Mentor can cancel an unfunded challenge (cleanup / listing removed).
-    pub fn close_challenge(env: Env, mentor: Address, challenge_id: u64) -> Result<(), ContractError> {
+    pub fn close_challenge(
+        env: Env,
+        mentor: Address,
+        challenge_id: u64,
+    ) -> Result<(), ContractError> {
         mentor.require_auth();
 
         let mut challenge: Challenge = env
