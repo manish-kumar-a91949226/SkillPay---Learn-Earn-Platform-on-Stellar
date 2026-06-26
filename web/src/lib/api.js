@@ -42,7 +42,7 @@ export const api = {
   getChallenges: (params = "") => request(`/challenges${params}`),
   getChallenge: (id) => request(`/challenges/${id}`),
   createChallenge: (payload) => request("/challenges", { method: "POST", body: payload }),
-  fundChallenge: (id) => request(`/challenges/${id}/fund`, { method: "POST" }),
+  fundChallenge: (id, payload) => request(`/challenges/${id}/fund`, { method: "POST", body: payload || undefined }),
 
   submitProject: (payload) => request("/submissions", { method: "POST", body: payload }),
   mySubmissions: () => request("/submissions/mine"),
