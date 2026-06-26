@@ -1,6 +1,7 @@
 import {
   Networks,
   TransactionBuilder,
+  Horizon,
   rpc,
   Contract,
   nativeToScVal,
@@ -11,10 +12,22 @@ import {
 import { requestAccess, signTransaction, getAddress, isAllowed, setAllowed } from "@stellar/freighter-api";
 
 const SOROBAN_RPC_URL = process.env.NEXT_PUBLIC_SOROBAN_RPC_URL || "https://soroban-testnet.stellar.org";
+const HORIZON_URL = "https://horizon-testnet.stellar.org";
 const CONTRACT_ID = process.env.NEXT_PUBLIC_SKILLPAY_CONTRACT_ID || "CAY7S7AFTXJ6R7UAK3N3O4L5N6M7P8Q9R0S1T2U3V4W5X6Y7Z8A9B0C1"; // Placeholder
 const NETWORK_PASSPHRASE = Networks.TESTNET;
 
 const sorobanServer = new rpc.Server(SOROBAN_RPC_URL);
+const horizon = new Horizon.Server(HORIZON_URL);
+
+export async function getBalance(publicKey) {
+  try {
+    const account = await horizon.loadAccount(publicKey);
+    const native = account.balances.find((b) => b.asset_type === "native");
+    return native ? native.balance : "0";
+  } catch {
+    return "0";
+  }
+}
 
 export async function connectWallet() {
   if (typeof window === "undefined") return null;

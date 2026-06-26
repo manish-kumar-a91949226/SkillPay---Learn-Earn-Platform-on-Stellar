@@ -34,6 +34,18 @@ router.get("/me", requireAuth, async (req, res, next) => {
   }
 });
 
+// GET /api/profile/balance - fast real-time balance check
+router.get("/balance", requireAuth, async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ error: "User not found" });
+    const balance = await getBalance(user.walletAddress).catch(() => "0");
+    res.json({ balance, walletAddress: user.walletAddress });
+  } catch (err) {
+    next(err);
+  }
+});
+
 // GET /api/profile/:id - public profile (no email/wallet secret exposed)
 router.get("/:id", async (req, res, next) => {
   try {

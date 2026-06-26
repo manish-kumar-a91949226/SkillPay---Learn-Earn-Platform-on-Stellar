@@ -51,6 +51,7 @@ export const api = {
   rejectSubmission: (id) => request(`/submissions/${id}/reject`, { method: "PATCH" }),
 
   myProfile: () => request("/profile/me"),
+  getBalance: () => request("/profile/balance"),
   publicProfile: (id) => request(`/profile/${id}`, { auth: false }),
   recentRewardsFeed: () => request("/profile/feed/recent", { auth: false }),
 };
