@@ -7,18 +7,25 @@ import {
   Memo,
   BASE_FEE,
 } from "@stellar/stellar-sdk";
-import { requestAccess, signTransaction, getAddress, isAllowed, setAllowed } from "@stellar/freighter-api";
+import {
+  isConnected,
+  isAllowed,
+  setAllowed,
+  requestAccess,
+  getAddress,
+  signTransaction,
+} from "@stellar/freighter-api";
 
 const HORIZON_URL = "https://horizon-testnet.stellar.org";
 const NETWORK_PASSPHRASE = Networks.TESTNET;
 
-// Platform escrow address — when user funds, XLM goes here as escrow
-// In production this would be the Soroban contract address
+// Platform escrow address — when user funds, XLM goes here as escrow proof
+// In production this would be the deployed Soroban contract address
 const PLATFORM_ESCROW = "GBCPCCSQGQ33Q65GIDG43KOKWG2HKP7QGDLMDGRVLWMGJYVTBKKV3RDE";
 
 const horizon = new Horizon.Server(HORIZON_URL);
 
-/** Fetch XLM balance for any public key */
+/** Fetch XLM balance for any Stellar public key via Horizon */
 export async function getBalance(publicKey) {
   try {
     const account = await horizon.loadAccount(publicKey);
@@ -29,41 +36,73 @@ export async function getBalance(publicKey) {
   }
 }
 
-/** Connect Freighter wallet and return the user's public key */
+/** Connect Freighter wallet using the v6 API. Returns the user's public key. */
 export async function connectFreighter() {
-  if (typeof window === "undefined") throw new Error("Cannot connect wallet server-side");
+  if (typeof window === "undefined") {
+    throw new Error("Cannot connect wallet server-side");
+  }
 
-  // Check if Freighter is installed
-  if (!window.freighter && !window.freighterApi) {
+  // 1. Check if Freighter extension is installed and running
+  const connectedResult = await isConnected();
+  if (connectedResult.error) {
+    throw new Error("Freighter error: " + connectedResult.error);
+  }
+  if (!connectedResult.isConnected) {
     throw new Error(
-      "Freighter wallet not found. Please install the Freighter browser extension from freighter.app and try again."
+      "Freighter wallet not found. Please install the Freighter browser extension from freighter.app and reload this page."
     );
   }
 
-  if (!(await isAllowed())) {
-    await setAllowed();
+  // 2. Check if this site is allowed to access Freighter
+  const allowedResult = await isAllowed();
+  if (!allowedResult.isAllowed) {
+    const setResult = await setAllowed();
+    if (setResult.error) {
+      throw new Error("Could not enable Freighter access: " + setResult.error);
+    }
   }
 
-  const res = await getAddress();
-  const address = typeof res === "string" ? res : res?.address;
-  if (!address) {
-    const access = await requestAccess();
-    const addr = typeof access === "string" ? access : access?.address;
-    if (!addr) throw new Error("Wallet access denied. Please approve the connection in Freighter.");
-    return addr;
+  // 3. Get the connected wallet address
+  let addressResult = await getAddress();
+  if (addressResult.error || !addressResult.address) {
+    // Not connected yet — ask for access
+    const accessResult = await requestAccess();
+    if (accessResult.error || !accessResult.address) {
+      throw new Error(
+        "Wallet access denied. Please approve the connection in Freighter and try again."
+      );
+    }
+    return accessResult.address;
   }
-  return address;
+
+  return addressResult.address;
 }
 
 /**
  * Fund a challenge from the user's Freighter wallet.
- * Sends rewardAmount XLM to the platform escrow address,
- * signed by the user's Freighter wallet. Returns txHash.
+ * Sends rewardAmount XLM to the SkillPay escrow address,
+ * signed by the user's Freighter wallet.
+ * Returns { txHash, walletAddress }.
  */
 export async function fundChallengeFromWallet(rewardAmount, challengeTitle) {
+  // Step 1: Connect wallet
   const publicKey = await connectFreighter();
 
-  // Load the user's account from Horizon
+  // Step 2: Check user is on Testnet
+  const { getNetworkDetails } = await import("@stellar/freighter-api");
+  try {
+    const networkResult = await getNetworkDetails();
+    if (networkResult.networkPassphrase !== Networks.TESTNET) {
+      throw new Error(
+        `Please switch Freighter to the Stellar Testnet. Currently on: ${networkResult.network}`
+      );
+    }
+  } catch (e) {
+    if (e.message.includes("switch")) throw e;
+    // If getNetworkDetails fails, proceed anyway
+  }
+
+  // Step 3: Load account from Horizon
   let account;
   try {
     account = await horizon.loadAccount(publicKey);
@@ -74,17 +113,17 @@ export async function fundChallengeFromWallet(rewardAmount, challengeTitle) {
     );
   }
 
-  // Check balance
+  // Step 4: Check sufficient balance
   const native = account.balances.find((b) => b.asset_type === "native");
   const balance = native ? parseFloat(native.balance) : 0;
   if (balance < rewardAmount + 1) {
     throw new Error(
       `Insufficient balance. You have ${balance.toFixed(2)} XLM but need at least ${rewardAmount + 1} XLM ` +
-      `(${rewardAmount} for reward + fees).`
+      `(${rewardAmount} for reward + fees). Fund at https://laboratory.stellar.org/#account-creator?network=test`
     );
   }
 
-  // Build the transaction
+  // Step 5: Build the XLM payment transaction
   const tx = new TransactionBuilder(account, {
     fee: BASE_FEE,
     networkPassphrase: NETWORK_PASSPHRASE,
@@ -96,33 +135,43 @@ export async function fundChallengeFromWallet(rewardAmount, challengeTitle) {
         amount: String(rewardAmount),
       })
     )
-    .addMemo(Memo.text(challengeTitle.slice(0, 28))) // max 28 bytes
+    .addMemo(Memo.text(challengeTitle.slice(0, 28))) // Stellar memo max 28 bytes
     .setTimeout(30)
     .build();
 
-  // Sign with Freighter
-  let signedXDR;
+  // Step 6: Sign with Freighter wallet
+  let signedTxXdr;
   try {
-    const result = await signTransaction(tx.toXDR(), {
-      network: "TESTNET",
+    const signResult = await signTransaction(tx.toXDR(), {
       networkPassphrase: NETWORK_PASSPHRASE,
     });
-    signedXDR = typeof result === "string" ? result : result?.signedTxXdr || result?.xdr;
+    if (signResult.error) {
+      throw new Error(signResult.error.message || String(signResult.error));
+    }
+    signedTxXdr = signResult.signedTxXdr;
   } catch (e) {
-    throw new Error("Transaction signing was cancelled or failed: " + e.message);
+    if (e.message?.toLowerCase().includes("cancel") || e.message?.toLowerCase().includes("reject")) {
+      throw new Error("Transaction was cancelled. Please try again and approve in Freighter.");
+    }
+    throw new Error("Signing failed: " + (e.message || String(e)));
   }
 
-  if (!signedXDR) throw new Error("No signed transaction received from Freighter.");
+  if (!signedTxXdr) {
+    throw new Error("No signed transaction received from Freighter. Did you reject the popup?");
+  }
 
-  // Submit to Stellar Testnet
-  const signedTx = TransactionBuilder.fromXDR(signedXDR, NETWORK_PASSPHRASE);
+  // Step 7: Submit to Stellar Testnet via Horizon
+  const signedTx = TransactionBuilder.fromXDR(signedTxXdr, NETWORK_PASSPHRASE);
   let response;
   try {
     response = await horizon.submitTransaction(signedTx);
   } catch (e) {
     const extras = e?.response?.data?.extras;
-    const detail = extras?.result_codes?.transaction || extras?.result_codes?.operations?.[0] || e.message;
-    throw new Error("Transaction failed: " + detail);
+    const detail =
+      extras?.result_codes?.transaction ||
+      extras?.result_codes?.operations?.[0] ||
+      e.message;
+    throw new Error("Transaction submission failed: " + detail);
   }
 
   return { txHash: response.hash, walletAddress: publicKey };
