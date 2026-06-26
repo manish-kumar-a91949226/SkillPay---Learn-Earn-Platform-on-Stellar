@@ -4,7 +4,6 @@ import Challenge from "../models/Challenge.js";
 import User from "../models/User.js";
 import Reward from "../models/Reward.js";
 import { requireAuth, requireRole } from "../middleware/auth.js";
-import { invokeContract, addressScVal, u64ScVal } from "../config/stellar.js";
 import { reviewWithGemini } from "../utils/aiReviewer.js";
 
 const router = Router();
@@ -103,18 +102,12 @@ router.patch("/:id/approve", requireAuth, requireRole("mentor"), async (req, res
       return res.status(409).json({ error: "Submission has already been reviewed" });
     }
 
-    const mentor = await User.findById(req.user.id).select("+walletSecret");
     const learner = await User.findById(submission.userId);
 
-    const releaseResult = await invokeContract(
-      "release_reward",
-      [
-        addressScVal(mentor.walletAddress),
-        u64ScVal(challenge.onChainId),
-        addressScVal(learner.walletAddress),
-      ],
-      mentor.walletSecret
-    );
+    const { txHash } = req.body;
+    if (!txHash) {
+      return res.status(400).json({ error: "txHash is required from the frontend" });
+    }
 
     submission.status = "approved";
     await submission.save();
@@ -127,7 +120,7 @@ router.patch("/:id/approve", requireAuth, requireRole("mentor"), async (req, res
       challengeId: challenge._id,
       learnerId: learner._id,
       amount: challenge.reward,
-      txHash: releaseResult.hash,
+      txHash: txHash,
       walletAddress: learner.walletAddress,
     });
 
@@ -135,7 +128,7 @@ router.patch("/:id/approve", requireAuth, requireRole("mentor"), async (req, res
     learner.challengesCompleted += 1;
     await learner.save();
 
-    res.json({ submission, txHash: releaseResult.hash });
+    res.json({ submission, txHash: txHash });
   } catch (err) {
     next(err);
   }
