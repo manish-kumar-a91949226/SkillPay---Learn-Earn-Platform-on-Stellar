@@ -3,7 +3,7 @@
 A production-ready blockchain-powered Learn & Earn platform built on the Stellar network. Mentors post challenges and escrow rewards via Freighter wallet. Learners submit real projects (GitHub + live demo). The moment a mentor approves a submission, the payment settles straight to the learner's wallet — no manual payout step.
 
 ## 🚀 Live Links
-- **Live MVP (Frontend):** [https://skill-pay-learn-earn-platform-on-st.vercel.app/](https://skill-pay-learn-earn-platform-on-st.vercel.app/)
+- **Live MVP (Frontend):** [https://skill-pay-learn-earn-platform-on-st.vercel.app/](https://skillpay-new-begining.vercel.app/)
 - **Backend API:** [https://skillpay-learn-earn-platform-on-stellar-1.onrender.com](https://skillpay-learn-earn-platform-on-stellar-1.onrender.com)
 - **Video Demo:** [Watch Full Demo on Google Drive](https://drive.google.com/file/d/1_5O4pPmIC3JsgRT0JEhz7jGA1-oIckYB/view?usp=sharing)
 - **Platform Escrow / Contract Address (Testnet):** `GBCPCCSQGQ33Q65GIDG43KOKWG2HKP7QGDLMDGRVLWMGJYVTBKKV3RDE`
