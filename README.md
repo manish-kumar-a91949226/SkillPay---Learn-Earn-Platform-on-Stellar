@@ -8,7 +8,7 @@ A production-ready blockchain-powered Learn & Earn platform built on the Stellar
 - **Video Demo:** [Watch Full Demo on Google Drive](https://drive.google.com/file/d/1_5O4pPmIC3JsgRT0JEhz7jGA1-oIckYB/view?usp=sharing)
 - **Platform Escrow / Contract Address (Testnet):** `GBCPCCSQGQ33Q65GIDG43KOKWG2HKP7QGDLMDGRVLWMGJYVTBKKV3RDE`
 - **Google Form link** [Feedback form link](https://docs.google.com/forms/d/e/1FAIpQLSdwt1mz5A3IKvZoI6kiH52LoN1h5WkiqwUYGE6zi9-6j6C_1A/viewform?usp=publish-editor)
-- ** Response Sheet** [Response sheet link](https://docs.google.com/spreadsheets/d/15-8E9v3UP-PvwJRUF0cK7jYbH0j9I4kenrCMSfCO0LY/edit?usp=sharing)
+- **Response Sheet** [Response sheet link](https://docs.google.com/spreadsheets/d/15-8E9v3UP-PvwJRUF0cK7jYbH0j9I4kenrCMSfCO0LY/edit?usp=sharing)
 
 ---
 
