@@ -17,7 +17,7 @@ export default function NavBar() {
       if (!cancelled) setBalance(parseFloat(bal).toFixed(2));
     }
     fetchBalance();
-    // Poll every 15 seconds for real-time updates
+    // Poll every 15 seconds for real-time updates (User Feedback: Wallet balance update visibility)
     const interval = setInterval(fetchBalance, 15000);
     return () => { cancelled = true; clearInterval(interval); };
   }, [user?.walletAddress]);
