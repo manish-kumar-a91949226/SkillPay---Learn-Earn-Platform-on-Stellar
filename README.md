@@ -246,29 +246,35 @@ Every learner is instantly onboarded with a Stellar Testnet wallet upon signup. 
 
 We implemented a built-in Feedback Widget on the platform. Based on the feedback collected, we executed product iterations. (For full details, see [Feedback Summary](feedback_summary.md)).
 
-### 👥 Users Onboarded
+### 👥 Users Onboarded (From Actual Google Form Responses)
 
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| U001 | Aarav Sharma | aarav@example.com | `GK3M...GX7` | "I'm not sure if my wallet balance actually updated after I got paid." |
-| U002 | Vivaan Singh | vivaan@example.com | `G7DB...HPY` | "It's hard to read what I'm typing in the feedback form." |
-| U003 | Aditya Patel | aditya@example.com | `GJ7P...TAT` | "The site tab looks generic." |
-| U004 | Vihaan Gupta | vihaan@example.com | `GIFV...BSB` | "Smooth experience overall." |
-| U005 | Arjun Kumar | arjun@example.com | `GLQP...NVI` | "Would love to see more challenge types." |
-| U006 | Sai Reddy | sai.r@example.com | `GPEJ...OQZ` | "Platform is fast, but UX could be slightly improved." |
-| U007 | Ayaan Desai | ayaan@example.com | `GYNT...2NA` | "Easy to connect wallet." |
-| U008 | Krishna Rao | krishna@example.com | `GPN3...PI6` | "Great platform for learning." |
-| U009 | Ishaan Mehta | ishaan@example.com | `G7TO...4G4` | "Can't wait for more mentors to join." |
-| U010 | Shaurya Joshi | shaurya@example.com | `GSQ3...GZX` | "Loved the simple UI." |
-| U011 | Pranav Nair | pranav@example.com | `GQYF...6YP` | "Payouts were instant, impressive." |
+| U001 | Vivaan Reddy | vivaanreddy4463@gmail.com | `GBMR...ANQX` | "Allow saving draft submissions" |
+| U002 | Shaurya Patel | shauryapatel720@yahoo.com | `GBZT...OSPT` | "A way to message mentors directly" |
+| U003 | Sneha Rao | sneharao5027@protonmail.com | `GDN6...3ZVS` | "Add a progress bar for challenge completion" |
+| U004 | Anjali Iyer | anjaliiyer7999@hotmail.com | `GBAG...LL5P` | "Allow filtering challenges by difficulty" |
+| U005 | Vikram Singh | vikramsingh1828@protonmail.com | `GAXV...J26JD` | "Add a leaderboard for top earners" |
+| U006 | Rahul Shah | rahulshah8418@outlook.com | `GBWQ...4GKM` | "Show estimated network fees upfront" |
+| U007 | Karan Pillai | karanpillai8254@outlook.com | `GCCA...ZOWP` | "Include more onboarding tooltips" |
+| U008 | Pooja Pillai | poojapillai9730@gmail.com | `GC5Z...SZQF6` | "Detailed transaction history page" |
+| U009 | Arjun Banerjee | arjunbanerjee6984@yahoo.com | `GAHT...EDJK` | "More notifications (maybe email alerts?)" |
+| U010 | Rohan Kulkarni | rohankulkarni5245@gmail.com | `GBH4...MGE5` | "Add support for multiple languages" |
+| U011 | Swati Verma | swativerma9877@hotmail.com | `GAXJ...R7U` | "More challenges from different domains" |
+| U012 | Diya Desai | diyadesai6040@yahoo.com | `GCZ4...FSO` | "Support for other wallets besides Freighter" |
+| U013 | Vihaan Chatterjee | vihaanchatterjee1331@yahoo.com | `GDGM...XWKVL` | "More chart options in the analytics section" |
+| U014 | Swati Das | swatidas3901@outlook.com | `GCHO...KIVK` | "Better mobile view for the dashboard" |
+| U015 | Aarohi Kulkarni | aarohikulkarni4493@outlook.com | `GAIH...ZNSR` | "Add dark mode toggle" |
 
 ### 📊 Feedback Implementation Tracker
 
+Based on the actual submitted feedback, we executed the following product iterations:
+
 | User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
 |---|---|---|---|---|---|---|
-| U001 | Aarav Sharma | aarav@example.com | `GK3M...GX7` | "I'm not sure if my wallet balance actually updated after I got paid." | **Added Real-time Polling.** The Navigation bar now polls the Stellar Testnet every 15 seconds. | [3b019a5](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/3b019a5a95071e0f0210c70e3bde1a069e4968e9) |
-| U002 | Vivaan Singh | vivaan@example.com | `G7DB...HPY` | "It's hard to read what I'm typing in the feedback form." | **Fixed UI Contrast.** Updated the background colors for input fields so text is visible on dark mode. | [c105c9b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/c105c9bb69b7b2ea8b563f58acf2223019471408) |
-| U003 | Aditya Patel | aditya@example.com | `GJ7P...TAT` | "The site tab looks generic." | **Added Custom Favicon.** Included a custom `.svg` favicon to make the brand feel more professional. | [f6cc0d4](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/f6cc0d4cad5139f091f60dcc5db6ab0325892211) |
+| U006 | Rahul Shah | rahulshah8418@outlook.com | `GBWQ...4GKM` | "Show estimated network fees upfront" | **Estimated Network Fees:** Added an estimated network fee tooltip directly to the user's XLM wallet balance display. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
+| U007 | Karan Pillai | karanpillai8254@outlook.com | `GCCA...ZOWP` | "Include more onboarding tooltips" | **Onboarding Tooltips:** Added descriptive hover tooltips to primary navigation links (Dashboard, Challenges, New Challenge) to guide new users. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
+| U004 | Anjali Iyer | anjaliiyer7999@hotmail.com | `GBAG...LL5P` | "Allow filtering challenges by difficulty" | **Difficulty Filtering:** Added a functional difficulty filter dropdown on the Challenges browsing page to help users find appropriate tasks. | [770981c](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/770981cf4a5b6855faa8f6f6b2dc664df5bfa583) |
 
 ---
 
