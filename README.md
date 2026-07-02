@@ -188,11 +188,11 @@ Every learner is instantly onboarded with a Stellar Testnet wallet upon signup. 
 </details>
 
 
-## 💬 Real User Feedback Summary
+## 💬 Improvement Summary
 
 We implemented a built-in Feedback Widget on the platform. Based on the feedback collected, we executed product iterations. (For full details, see [Feedback Summary](feedback_summary.md)).
 
-### 👥 Users Onboarded (From Actual Google Form Responses)
+### 👥 Users Onboarded
 
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
@@ -212,7 +212,7 @@ We implemented a built-in Feedback Widget on the platform. Based on the feedback
 | U014 | Swati Das | swatidas3901@outlook.com | `GCHO2ZDSSQYXZNG5TXHQ63PUMFUNX43OOC5FLRLR6J22H4EHK5JXKIVK` | "Better mobile view for the dashboard" |
 | U015 | Aarohi Kulkarni | aarohikulkarni4493@outlook.com | `GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR` | "Add dark mode toggle" |
 
-### 📊 Feedback Implementation Tracker
+### 📊 Feedback Implementation
 
 Based on the actual submitted feedback, we executed the following product iterations:
 
