@@ -250,21 +250,21 @@ We implemented a built-in Feedback Widget on the platform. Based on the feedback
 
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| U001 | Vivaan Reddy | vivaanreddy4463@gmail.com | `GBMR...ANQX` | "Allow saving draft submissions" |
-| U002 | Shaurya Patel | shauryapatel720@yahoo.com | `GBZT...OSPT` | "A way to message mentors directly" |
-| U003 | Sneha Rao | sneharao5027@protonmail.com | `GDN6...3ZVS` | "Add a progress bar for challenge completion" |
-| U004 | Anjali Iyer | anjaliiyer7999@hotmail.com | `GBAG...LL5P` | "Allow filtering challenges by difficulty" |
-| U005 | Vikram Singh | vikramsingh1828@protonmail.com | `GAXV...J26JD` | "Add a leaderboard for top earners" |
-| U006 | Rahul Shah | rahulshah8418@outlook.com | `GBWQ...4GKM` | "Show estimated network fees upfront" |
-| U007 | Karan Pillai | karanpillai8254@outlook.com | `GCCA...ZOWP` | "Include more onboarding tooltips" |
-| U008 | Pooja Pillai | poojapillai9730@gmail.com | `GC5Z...SZQF6` | "Detailed transaction history page" |
-| U009 | Arjun Banerjee | arjunbanerjee6984@yahoo.com | `GAHT...EDJK` | "More notifications (maybe email alerts?)" |
-| U010 | Rohan Kulkarni | rohankulkarni5245@gmail.com | `GBH4...MGE5` | "Add support for multiple languages" |
-| U011 | Swati Verma | swativerma9877@hotmail.com | `GAXJ...R7U` | "More challenges from different domains" |
-| U012 | Diya Desai | diyadesai6040@yahoo.com | `GCZ4...FSO` | "Support for other wallets besides Freighter" |
-| U013 | Vihaan Chatterjee | vihaanchatterjee1331@yahoo.com | `GDGM...XWKVL` | "More chart options in the analytics section" |
-| U014 | Swati Das | swatidas3901@outlook.com | `GCHO...KIVK` | "Better mobile view for the dashboard" |
-| U015 | Aarohi Kulkarni | aarohikulkarni4493@outlook.com | `GAIH...ZNSR` | "Add dark mode toggle" |
+| U001 | Vivaan Reddy | vivaanreddy4463@gmail.com | `GBMRDDJKNDUT7DJFRGF2EPEQIXEXNTDMTR6JXRW2ANUC4DG6QZ2IANQX` | "Allow saving draft submissions" |
+| U002 | Shaurya Patel | shauryapatel720@yahoo.com | `GBZTSNY2O2RFRD3F7BPUQSP6WE6RF7CN4E2XRRUWF4VL6S2AXZQNOSPT` | "A way to message mentors directly" |
+| U003 | Sneha Rao | sneharao5027@protonmail.com | `GDN6WZ7UDERSQ5MOWLHSKLL4IHMVOIHPIZUQLANDFSNVA3TGD6YT3ZVS` | "Add a progress bar for challenge completion" |
+| U004 | Anjali Iyer | anjaliiyer7999@hotmail.com | `GBAGQX7FLT7TOH5UE26POB475UOLU4Q7UETHOLEGTGBXQYTHHIE6LL5P` | "Allow filtering challenges by difficulty" |
+| U005 | Vikram Singh | vikramsingh1828@protonmail.com | `GAXVRKNRTHOJSZXRFDK5T5VFFEUG3KAB4JZ3BFA5OFAOHWLXX6HJ26JD` | "Add a leaderboard for top earners" |
+| U006 | Rahul Shah | rahulshah8418@outlook.com | `GBWQRKIDHYCXE26GSYASW5VT5WIZOGLH7OA7SMWVQF553EHTG6Q54GKM` | "Show estimated network fees upfront" |
+| U007 | Karan Pillai | karanpillai8254@outlook.com | `GCCAJ5FZ6S3XKMDBMQLKAQC3OCLFVKYY7PRQIF7BQ27IRWQD4B2OZOWP` | "Include more onboarding tooltips" |
+| U008 | Pooja Pillai | poojapillai9730@gmail.com | `GC5ZDVGRSOXRPKKIOXJSOEYEAPXH4RIEOR5DH5WQ2XECWGOOQ47SZQF6` | "Detailed transaction history page" |
+| U009 | Arjun Banerjee | arjunbanerjee6984@yahoo.com | `GAHTF7KDHANNJQ5N3YEQRL56HM44PVH24IM3RM57ESBRP3GYM6EIDDJK` | "More notifications (maybe email alerts?)" |
+| U010 | Rohan Kulkarni | rohankulkarni5245@gmail.com | `GBH4UPXRLPA2CXHKBZ5U6XAGYYDKUSN3VWFTEBD73BJV5I23HQXZMGE5` | "Add support for multiple languages" |
+| U011 | Swati Verma | swativerma9877@hotmail.com | `GAXJGPQ62NR2ML2RKV2ZSVGQ6Q55Y2AYX6BOWOQYBOWDCSD5IOQH2R7U` | "More challenges from different domains" |
+| U012 | Diya Desai | diyadesai6040@yahoo.com | `GCZ4KZ2QOCABBLCSQM2CQJ7ESZFN2R6K432BEXES6WFZEPDVV26FQFSO` | "Support for other wallets besides Freighter" |
+| U013 | Vihaan Chatterjee | vihaanchatterjee1331@yahoo.com | `GDGME554REKEKSHN6CQOHDT3NWP22KHAGYMDBTOCJM7S7HPFR6FXWKVL` | "More chart options in the analytics section" |
+| U014 | Swati Das | swatidas3901@outlook.com | `GCHO2ZDSSQYXZNG5TXHQ63PUMFUNX43OOC5FLRLR6J22H4EHK5JXKIVK` | "Better mobile view for the dashboard" |
+| U015 | Aarohi Kulkarni | aarohikulkarni4493@outlook.com | `GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR` | "Add dark mode toggle" |
 
 ### 📊 Feedback Implementation Tracker
 
@@ -272,9 +272,9 @@ Based on the actual submitted feedback, we executed the following product iterat
 
 | User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
 |---|---|---|---|---|---|---|
-| U006 | Rahul Shah | rahulshah8418@outlook.com | `GBWQ...4GKM` | "Show estimated network fees upfront" | **Estimated Network Fees:** Added an estimated network fee tooltip directly to the user's XLM wallet balance display. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
-| U007 | Karan Pillai | karanpillai8254@outlook.com | `GCCA...ZOWP` | "Include more onboarding tooltips" | **Onboarding Tooltips:** Added descriptive hover tooltips to primary navigation links (Dashboard, Challenges, New Challenge) to guide new users. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
-| U004 | Anjali Iyer | anjaliiyer7999@hotmail.com | `GBAG...LL5P` | "Allow filtering challenges by difficulty" | **Difficulty Filtering:** Added a functional difficulty filter dropdown on the Challenges browsing page to help users find appropriate tasks. | [770981c](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/770981cf4a5b6855faa8f6f6b2dc664df5bfa583) |
+| U006 | Rahul Shah | rahulshah8418@outlook.com | `GBWQRKIDHYCXE26GSYASW5VT5WIZOGLH7OA7SMWVQF553EHTG6Q54GKM` | "Show estimated network fees upfront" | **Estimated Network Fees:** Added an estimated network fee tooltip directly to the user's XLM wallet balance display. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
+| U007 | Karan Pillai | karanpillai8254@outlook.com | `GCCAJ5FZ6S3XKMDBMQLKAQC3OCLFVKYY7PRQIF7BQ27IRWQD4B2OZOWP` | "Include more onboarding tooltips" | **Onboarding Tooltips:** Added descriptive hover tooltips to primary navigation links (Dashboard, Challenges, New Challenge) to guide new users. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
+| U004 | Anjali Iyer | anjaliiyer7999@hotmail.com | `GBAGQX7FLT7TOH5UE26POB475UOLU4Q7UETHOLEGTGBXQYTHHIE6LL5P` | "Allow filtering challenges by difficulty" | **Difficulty Filtering:** Added a functional difficulty filter dropdown on the Challenges browsing page to help users find appropriate tasks. | [770981c](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/770981cf4a5b6855faa8f6f6b2dc664df5bfa583) |
 
 ---
 
