@@ -8,6 +8,9 @@ import FeedbackWidget from "../components/FeedbackWidget";
 export const metadata = {
   title: "SkillPay — Learn. Prove it. Get paid.",
   description: "A ledger of skill, proof, and payment — built on Stellar.",
+  icons: {
+    icon: '/favicon.svg', // Custom favicon based on user feedback
+  },
 };
 
 export default function RootLayout({ children }) {
