@@ -36,14 +36,25 @@ export default function ChallengesPage() {
             Pick one, ship the work, get paid when it's approved.
           </p>
         </div>
-        {user?.role === "mentor" && (
-          <Link
-            href="/challenges/new"
-            className="font-mono text-sm border border-signal-gold text-signal-gold px-4 py-2 rounded-sm hover:bg-signal-gold hover:text-ink transition-colors"
+        <div className="flex gap-4 items-center">
+          <select 
+            className="bg-ink border border-ink-line text-bone-dim text-sm rounded-sm px-3 py-2 outline-none focus:border-signal-slate cursor-pointer"
+            title="Filter by difficulty based on user feedback"
           >
-            + new challenge
-          </Link>
-        )}
+            <option value="all">All Difficulties</option>
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+          {user?.role === "mentor" && (
+            <Link
+              href="/challenges/new"
+              className="font-mono text-sm border border-signal-gold text-signal-gold px-4 py-2 rounded-sm hover:bg-signal-gold hover:text-ink transition-colors"
+            >
+              + new challenge
+            </Link>
+          )}
+        </div>
       </div>
 
       {loading && <LoadingRows />}
