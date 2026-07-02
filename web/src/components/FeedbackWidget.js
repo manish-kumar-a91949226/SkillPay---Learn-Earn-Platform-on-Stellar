@@ -68,7 +68,7 @@ export default function FeedbackWidget() {
                 <select
                   value={type}
                   onChange={(e) => setType(e.target.value)}
-                  className="bg-[#111513] border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate"
+                  className="bg-[#1a1f1c] border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate" // Contrast fix based on user feedback
                 >
                   <option value="general">General Feedback</option>
                   <option value="feature">Feature Request</option>
@@ -80,7 +80,7 @@ export default function FeedbackWidget() {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="What's on your mind?"
                   rows={4}
-                  className="bg-[#111513] border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate resize-none"
+                  className="bg-[#1a1f1c] border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate resize-none" // Contrast fix based on user feedback
                   required
                 />
 
