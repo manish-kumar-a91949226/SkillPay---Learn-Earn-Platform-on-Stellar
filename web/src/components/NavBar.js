@@ -8,6 +8,13 @@ import { getBalance } from "../lib/stellar";
 export default function NavBar() {
   const { user, logout, loading } = useAuth();
   const [balance, setBalance] = useState(null);
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    document.body.classList.toggle("light-mode", newTheme === "light");
+  };
 
   useEffect(() => {
     if (!user?.walletAddress) { setBalance(null); return; }
@@ -35,6 +42,9 @@ export default function NavBar() {
         <nav className="hidden md:flex items-center gap-8 text-sm text-bone-dim">
           <Link href="/challenges" className="hover:text-bone transition-colors" title="Browse open challenges">
             Challenges
+          </Link>
+          <Link href="/leaderboard" className="hover:text-bone transition-colors" title="View top earners">
+            Leaderboard
           </Link>
           {user?.role === "mentor" && (
             <Link href="/challenges/new" className="hover:text-bone transition-colors" title="Create a new challenge">
@@ -72,6 +82,9 @@ export default function NavBar() {
                 className="text-xs text-bone-faint hover:text-signal-rust transition-colors"
               >
                 Sign out
+              </button>
+              <button onClick={toggleTheme} className="text-xs text-bone-faint hover:text-signal-gold transition-colors ml-2" title="Toggle dark/light mode">
+                {theme === 'dark' ? '☀️' : '🌙'}
               </button>
             </>
           ) : (

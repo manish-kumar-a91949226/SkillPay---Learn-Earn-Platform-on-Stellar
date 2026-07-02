@@ -18,6 +18,20 @@
   --rust: #b85c42;
 }
 
+body.light-mode {
+  --ink: #f7f5f0;
+  --ink-raised: #ffffff;
+  --ink-line: #e3dec9;
+  --bone: #1a1a1a;
+  --bone-dim: #4a4a4a;
+  --bone-faint: #7a7a7a;
+  --gold: #b8862d;
+  --gold-dim: #8a6b34;
+  --slate: #5b8c8a;
+  --slate-dim: #3d5e5c;
+  --rust: #b85c42;
+}
+
 * {
   box-sizing: border-box;
 }

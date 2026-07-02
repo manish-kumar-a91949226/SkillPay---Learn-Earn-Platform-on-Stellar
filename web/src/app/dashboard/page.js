@@ -42,11 +42,23 @@ export default function DashboardPage() {
         <p className="text-bone-dim text-sm mt-1 capitalize">{user.role} account</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         <Stat label="Wallet balance" value={`${user.balance ?? "—"} XLM`} />
         <Stat label="Total earned" value={`${user.totalRewards ?? 0} XLM`} accent />
         <Stat label="Challenges completed" value={user.challengesCompleted ?? 0} />
       </div>
+
+      {user.role === "learner" && (
+        <div className="mb-10">
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-sm font-mono text-bone-dim uppercase tracking-tagwide">Level Progress</span>
+            <span className="text-sm font-mono text-signal-gold">{Math.min((user.challengesCompleted || 0) * 20, 100)}%</span>
+          </div>
+          <div className="w-full bg-ink-line rounded-full h-2">
+            <div className="bg-signal-gold h-2 rounded-full transition-all duration-500" style={{ width: `${Math.min((user.challengesCompleted || 0) * 20, 100)}%` }}></div>
+          </div>
+        </div>
+      )}
 
       {user.role === "mentor" ? (
         <div className="border border-ink-line rounded-sm p-6">
@@ -78,7 +90,7 @@ export default function DashboardPage() {
           {!loading && submissions.length > 0 && (
             <div className="ledger">
               {submissions.map((s) => (
-                <div key={s._id} className="ledger-row grid-cols-[110px_1fr_100px] gap-6 items-center">
+                <div key={s._id} className="ledger-row grid-cols-1 md:grid-cols-[110px_1fr_100px] gap-2 md:gap-6 items-start md:items-center">
                   <span
                     className={`tag ${
                       s.status === "approved"
