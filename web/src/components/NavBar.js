@@ -33,16 +33,16 @@ export default function NavBar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-bone-dim">
-          <Link href="/challenges" className="hover:text-bone transition-colors">
+          <Link href="/challenges" className="hover:text-bone transition-colors" title="Browse open challenges">
             Challenges
           </Link>
           {user?.role === "mentor" && (
-            <Link href="/challenges/new" className="hover:text-bone transition-colors">
+            <Link href="/challenges/new" className="hover:text-bone transition-colors" title="Create a new challenge">
               New challenge
             </Link>
           )}
           {user && (
-            <Link href="/dashboard" className="hover:text-bone transition-colors">
+            <Link href="/dashboard" className="hover:text-bone transition-colors" title="View your personal dashboard">
               Dashboard
             </Link>
           )}
@@ -52,7 +52,10 @@ export default function NavBar() {
           {loading ? null : user ? (
             <>
               {balance !== null && (
-                <span className="hidden md:flex items-center gap-1.5 text-xs font-mono bg-ink-raised border border-ink-line rounded-sm px-2.5 py-1">
+                <span 
+                  className="hidden md:flex items-center gap-1.5 text-xs font-mono bg-ink-raised border border-ink-line rounded-sm px-2.5 py-1"
+                  title="Estimated network fee: ~0.00001 XLM per transaction"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-signal-gold inline-block animate-pulse" />
                   <span className="text-signal-gold font-medium">{balance}</span>
                   <span className="text-bone-faint">XLM</span>
