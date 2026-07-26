@@ -36,6 +36,16 @@ body.light-mode {
   box-sizing: border-box;
 }
 
+html.light-mode {
+  background-color: var(--bone);
+  color: var(--ink);
+}
+
+.theme-dark-mode {
+  background-color: var(--ink);
+  color: var(--bone);
+}
+
 html,
 body {
   background: var(--ink);
