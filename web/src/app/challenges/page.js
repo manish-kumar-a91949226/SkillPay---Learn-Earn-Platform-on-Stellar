@@ -12,6 +12,8 @@ const STATUS_STYLE = {
   closed: "text-bone-faint border-bone-faint",
 };
 
+export const DIFFICULTY_LEVELS = ["All", "Beginner", "Intermediate", "Advanced"];
+
 export default function ChallengesPage() {
   const { user } = useAuth();
   const [challenges, setChallenges] = useState([]);
