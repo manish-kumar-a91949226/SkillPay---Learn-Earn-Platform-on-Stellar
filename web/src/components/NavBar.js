@@ -2,9 +2,25 @@
 
 import Link from "next/link";
 import { useAuth } from "../lib/auth";
+import { useEffect, useState } from "react";
+import { getBalance } from "../lib/stellar";
 
 export default function NavBar() {
   const { user, logout, loading } = useAuth();
+  const [balance, setBalance] = useState(null);
+
+  useEffect(() => {
+    if (!user?.walletAddress) { setBalance(null); return; }
+    let cancelled = false;
+    async function fetchBalance() {
+      const bal = await getBalance(user.walletAddress);
+      if (!cancelled) setBalance(parseFloat(bal).toFixed(2));
+    }
+    fetchBalance();
+    // Poll every 15 seconds for real-time updates
+    const interval = setInterval(fetchBalance, 15000);
+    return () => { cancelled = true; clearInterval(interval); };
+  }, [user?.walletAddress]);
 
   return (
     <header className="border-b border-ink-line">
@@ -35,6 +51,13 @@ export default function NavBar() {
         <div className="flex items-center gap-4">
           {loading ? null : user ? (
             <>
+              {balance !== null && (
+                <span className="hidden md:flex items-center gap-1.5 text-xs font-mono bg-ink-raised border border-ink-line rounded-sm px-2.5 py-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-signal-gold inline-block animate-pulse" />
+                  <span className="text-signal-gold font-medium">{balance}</span>
+                  <span className="text-bone-faint">XLM</span>
+                </span>
+              )}
               <Link
                 href="/profile"
                 className="font-mono text-xs text-bone-dim hover:text-signal-gold transition-colors"

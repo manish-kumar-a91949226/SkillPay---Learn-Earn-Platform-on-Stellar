@@ -1,18 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "next/navigation";
 import { useAuth } from "../../../lib/auth";
 import { api } from "../../../lib/api";
 import { track } from "../../../lib/analytics";
-import { createAndFundChallenge, invokeContractFromFrontend, addressScVal, u64ScVal } from "../../../lib/stellar";
+import { createAndFundChallenge, invokeContractFromFrontend, addressScVal, u64ScVal, getBalance } from "../../../lib/stellar";
 
 export default function ChallengeDetailPage() {
   const { id } = useParams();
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [challenge, setChallenge] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [balance, setBalance] = useState(null);
+
+  const refreshBalance = useCallback(async () => {
+    if (user?.walletAddress) {
+      try {
+        const bal = await getBalance(user.walletAddress);
+        setBalance(parseFloat(bal).toFixed(2));
+      } catch { /* silent */ }
+    }
+  }, [user?.walletAddress]);
 
   useEffect(() => {
     api
@@ -21,7 +31,8 @@ export default function ChallengeDetailPage() {
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
     track("challenge_viewed", { challengeId: id });
-  }, [id]);
+    refreshBalance();
+  }, [id, refreshBalance]);
 
   if (loading) {
     return <div className="max-w-3xl mx-auto px-6 py-20 text-bone-faint">Loading challenge…</div>;
@@ -39,6 +50,12 @@ export default function ChallengeDetailPage() {
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-14">
+      {balance !== null && (
+        <div className="mb-4 text-xs font-mono text-bone-faint flex items-center gap-2">
+          <span className="text-signal-slate">●</span>
+          Wallet balance: <span className="text-signal-gold font-medium">{balance} XLM</span>
+        </div>
+      )}
       <span className="tag text-signal-slate border-signal-slate mb-4">
         <span className="tag-dot" />
         {challenge.status}
@@ -57,13 +74,25 @@ export default function ChallengeDetailPage() {
           value={
             challenge.contractStatus === "unfunded"
               ? "not yet funded on-chain"
-              : `funded · tx ${challenge.fundingTxHash?.slice(0, 10)}…`
+              : (
+                <span>
+                  funded ·{" "}
+                  <a
+                    href={`https://stellar.expert/explorer/testnet/tx/${challenge.fundingTxHash}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-signal-slate hover:underline"
+                  >
+                    tx {challenge.fundingTxHash?.slice(0, 10)}… ↗
+                  </a>
+                </span>
+              )
           }
         />
       </div>
 
       {isOwnerMentor && challenge.contractStatus === "unfunded" && (
-        <FundButton challengeId={challenge._id} onFunded={setChallenge} />
+        <FundButton challenge={challenge} onFunded={(updated) => { setChallenge(updated); refreshBalance(); }} />
       )}
 
       {isOwnerMentor && (
@@ -97,7 +126,7 @@ function DetailRow({ label, value, highlight }) {
   );
 }
 
-function FundButton({ challengeId, onFunded }) {
+function FundButton({ challenge, onFunded }) {
   const [funding, setFunding] = useState(false);
   const [error, setError] = useState("");
 
@@ -106,7 +135,7 @@ function FundButton({ challengeId, onFunded }) {
     setError("");
     try {
       const { onChainId, txHash } = await createAndFundChallenge(challenge.title, challenge.reward);
-      const { challenge: updatedChallenge } = await api.fundChallenge(challengeId, { onChainId, txHash });
+      const { challenge: updatedChallenge } = await api.fundChallenge(challenge._id, { onChainId, txHash });
       onFunded(updatedChallenge);
     } catch (err) {
       setError(err.message);
