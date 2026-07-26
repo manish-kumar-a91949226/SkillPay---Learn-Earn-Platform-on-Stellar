@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { useAuth } from "../../../lib/auth";
 import { api } from "../../../lib/api";
 import { track } from "../../../lib/analytics";
-import { getBalance } from "../../../lib/stellar";
+import { getBalance, fundChallengeFromWallet } from "../../../lib/stellar";
 
 export default function ChallengeDetailPage() {
   const { id } = useParams();
@@ -92,7 +92,11 @@ export default function ChallengeDetailPage() {
       </div>
 
       {isOwnerMentor && challenge.contractStatus === "unfunded" && (
-        <FundButton challenge={challenge} onFunded={(updated) => { setChallenge(updated); refreshBalance(); }} />
+        <FundButton
+          challenge={challenge}
+          onFunded={(updated) => { setChallenge(updated); refreshBalance(); }}
+          onBalanceRefresh={refreshBalance}
+        />
       )}
 
       {isOwnerMentor && (
@@ -126,37 +130,93 @@ function DetailRow({ label, value, highlight }) {
   );
 }
 
-function FundButton({ challenge, onFunded }) {
-  const [funding, setFunding] = useState(false);
+function FundButton({ challenge, onFunded, onBalanceRefresh }) {
+  const [step, setStep] = useState("idle"); // idle | connecting | signing | submitting | done
+  const [walletAddress, setWalletAddress] = useState(null);
+  const [walletBalance, setWalletBalance] = useState(null);
   const [error, setError] = useState("");
 
   async function handleFund() {
-    setFunding(true);
     setError("");
+    setStep("signing");
     try {
-      // Backend handles signing — works with or without deployed contract
-      const { challenge: updatedChallenge, txHash } = await api.fundChallenge(challenge._id);
+      // 1. Sign and submit XLM payment from user's Freighter wallet
+      const { txHash, walletAddress: addr } = await fundChallengeFromWallet(
+        challenge.reward,
+        challenge.title
+      );
+      setWalletAddress(addr);
+      setStep("submitting");
+
+      // 2. Tell backend to mark challenge as funded with the real txHash
+      const { challenge: updatedChallenge } = await api.fundChallenge(challenge._id, { txHash });
       onFunded(updatedChallenge);
+      setStep("done");
+
+      // 3. Refresh balance in navbar
+      if (onBalanceRefresh) onBalanceRefresh();
     } catch (err) {
       setError(err.message);
-    } finally {
-      setFunding(false);
+      setStep("idle");
     }
   }
 
+  const isLoading = step === "signing" || step === "submitting";
+  const stepLabel = {
+    idle: "Fund reward pool via Freighter",
+    signing: "Sign in Freighter wallet…",
+    submitting: "Submitting to Stellar…",
+    done: "Funded!",
+  };
+
   return (
-    <div className="border border-signal-gold/40 rounded-sm p-5 mb-10">
-      <p className="text-sm text-bone-dim mb-3">
-        This challenge isn't funded yet. Click below to escrow the reward on-chain
-        so learners know the payout is real before they start working.
+    <div className="border border-signal-gold/40 rounded-sm p-5 mb-10 space-y-3">
+      <p className="text-sm text-bone-dim">
+        Escrow the reward on-chain from your own wallet. This sends{" "}
+        <span className="text-signal-gold font-mono font-medium">{challenge.reward} XLM</span>{" "}
+        to the SkillPay escrow address — verifiable on Stellar Explorer.
       </p>
-      {error && <p className="text-signal-rust text-sm mb-3">{error}</p>}
+
+      <div className="flex items-center gap-2 text-xs font-mono text-bone-faint">
+        <span className="w-1.5 h-1.5 rounded-full bg-signal-slate inline-block" />
+        Uses Freighter Wallet Extension
+      </div>
+
+      {error && (
+        <div className="bg-signal-rust/10 border border-signal-rust/40 rounded-sm p-3">
+          <p className="text-signal-rust text-xs">{error}</p>
+          {error.includes("Freighter") && (
+            <a
+              href="https://freighter.app"
+              target="_blank"
+              rel="noreferrer"
+              className="text-signal-slate text-xs hover:underline mt-1 block"
+            >
+              Install Freighter ↗
+            </a>
+          )}
+          {error.includes("activated") && (
+            <a
+              href="https://laboratory.stellar.org/#account-creator?network=test"
+              target="_blank"
+              rel="noreferrer"
+              className="text-signal-slate text-xs hover:underline mt-1 block"
+            >
+              Activate on Testnet ↗
+            </a>
+          )}
+        </div>
+      )}
+
       <button
         onClick={handleFund}
-        disabled={funding}
-        className="bg-signal-gold text-ink px-4 py-2 rounded-sm text-sm font-medium hover:bg-signal-gold/90 transition-colors disabled:opacity-50"
+        disabled={isLoading}
+        className="bg-signal-gold text-ink px-4 py-2 rounded-sm text-sm font-medium hover:bg-signal-gold/90 transition-colors disabled:opacity-50 flex items-center gap-2"
       >
-        {funding ? "Escrowing on Stellar…" : "Fund reward pool"}
+        {isLoading && (
+          <span className="w-3 h-3 border-2 border-ink/30 border-t-ink rounded-full animate-spin" />
+        )}
+        {stepLabel[step]}
       </button>
     </div>
   );

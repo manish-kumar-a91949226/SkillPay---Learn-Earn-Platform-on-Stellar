@@ -104,7 +104,10 @@ router.post("/:id/fund", requireAuth, requireRole("mentor"), async (req, res, ne
     let txHash;
     let onChainId = null;
 
-    if (CONTRACT_ID && NATIVE_XLM_SAC) {
+    // If the frontend signed the transaction (Freighter), just record the txHash
+    if (req.body?.txHash) {
+      txHash = req.body.txHash;
+    } else if (CONTRACT_ID && NATIVE_XLM_SAC) {
       // Full Soroban path — contract is deployed
       try {
         const createResult = await invokeContract(
