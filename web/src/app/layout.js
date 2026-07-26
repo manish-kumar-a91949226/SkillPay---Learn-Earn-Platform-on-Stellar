@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { AuthProvider } from "../lib/auth";
 import AnalyticsInit from "../components/AnalyticsInit";
+import { Analytics } from "@vercel/analytics/react";
 import NavBar from "../components/NavBar";
 import FeedbackWidget from "../components/FeedbackWidget";
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
           <NavBar />
           <main>{children}</main>
           <FeedbackWidget />
+          <Analytics />
         </AuthProvider>
       </body>
     </html>
