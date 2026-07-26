@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useAuth } from "../../lib/auth";
 import { api } from "../../lib/api";
 
+export const calculateProgress = (approvedCount) => Math.min(100, (approvedCount / 5) * 100);
+
 export default function DashboardPage() {
   const { user, loading: authLoading } = useAuth();
   const [submissions, setSubmissions] = useState([]);
