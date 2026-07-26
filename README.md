@@ -28,9 +28,13 @@ A production-ready blockchain-powered Learn & Earn platform built on the Stellar
 |:---:|:---:|
 | ![Mentor Submissions](assets/mentor_submiisons%20lists%20for%20challenge.png) | ![Learner Dashboard](assets/learner_dashboard.png) |
 
-| Mentor Dashboard |
+| Mentor Dashboard | Mobile Responsive View |
+|:---:|:---:|
+| ![Mentor Dashboard](assets/mentor%20dashboard.png) | ![Mobile View](assets/mobile_view.png) |
+
+| Analytics Dashboard (PostHog) |
 |:---:|
-| ![Mentor Dashboard](assets/mentor%20dashboard.png) |
+| ![Analytics Dashboard](assets/analytics_dashboard.png) |
 
 ---
 
