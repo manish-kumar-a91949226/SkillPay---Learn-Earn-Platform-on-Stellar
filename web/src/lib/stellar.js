@@ -16,7 +16,8 @@ import {
   signTransaction,
 } from "@stellar/freighter-api";
 
-const HORIZON_URL = "https://horizon-testnet.stellar.org";
+export const HORIZON_URL = "https://horizon-testnet.stellar.org";
+export const ESTIMATED_FEE_XLM = "0.00001";
 const NETWORK_PASSPHRASE = Networks.TESTNET;
 
 // Platform escrow address — when user funds, XLM goes here as escrow proof
