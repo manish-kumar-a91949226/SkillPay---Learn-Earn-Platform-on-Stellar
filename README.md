@@ -14,6 +14,11 @@ Next.js frontend  →  Node.js / Express API  →  MongoDB Atlas
                         Stellar Testnet
 ```
 
+## Live Deployments
+- **Frontend (Vercel):** [https://skill-pay-learn-earn-platform-on-st.vercel.app/](https://skill-pay-learn-earn-platform-on-st.vercel.app/)
+- **Backend (Render):** [https://skillpay-learn-earn-platform-on-stellar-1.onrender.com](https://skillpay-learn-earn-platform-on-stellar-1.onrender.com)
+- **Demo Video:** [Insert Link Here]
+
 ## Repo layout
 
 ```
@@ -130,11 +135,27 @@ these are required in your submission, see the checklist below.
 2. Share the signup link with classmates / your network. Each signup
    auto-creates and funds a wallet, so "onboarded" = "has a funded testnet
    wallet" with zero manual setup on their end.
-3. After at least one real `release_reward` transaction per user, record
-   it in `docs/wallet-proof.md` (template included) with their public key,
-   amount, and tx hash — this is your wallet-interaction proof.
-4. Send the feedback form (template in `docs/feedback-form.md`) and
-   summarize responses in the same doc.
+3. Mentors connect their **Freighter** wallet on the frontend to sign and deploy Soroban contracts for funding and payouts.
+
+### User Onboarding
+
+| Name | Email | Wallet Address |
+|---|---|---|
+| [User 1 Name] | [User 1 Email] | [User 1 Stellar Public Key] |
+| [User 2 Name] | [User 2 Email] | [User 2 Stellar Public Key] |
+| ... | ... | ... |
+
+*(Fill in at least 10 real users here before submitting)*
+
+### Feedback Implementation
+
+| Feedback / Finding | How it was addressed in the product |
+|---|---|
+| *E.g., Mentors found it confusing to sign transactions on the backend* | Moved Soroban contract invocation to the frontend via `@stellar/freighter-api` |
+| [Insert Feedback 2] | [Insert Implementation 2] |
+| ... | ... |
+
+*(Fill this in based on real feedback forms you collected)*
 
 ## Submission checklist mapping
 

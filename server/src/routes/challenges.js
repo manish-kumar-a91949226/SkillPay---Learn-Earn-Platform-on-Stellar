@@ -2,13 +2,6 @@ import { Router } from "express";
 import Challenge from "../models/Challenge.js";
 import User from "../models/User.js";
 import { requireAuth, requireRole } from "../middleware/auth.js";
-import {
-  invokeContract,
-  addressScVal,
-  stringScVal,
-  i128ScVal,
-  u64ScVal,
-} from "../config/stellar.js";
 
 const router = Router();
 
@@ -85,36 +78,18 @@ router.post("/:id/fund", requireAuth, requireRole("mentor"), async (req, res, ne
     const mentor = await User.findById(req.user.id).select("+walletSecret");
     if (!mentor) return res.status(404).json({ error: "Mentor account not found" });
 
-    // 1. create_challenge on-chain (if not already created)
-    let onChainId = challenge.onChainId;
-    if (onChainId === null || onChainId === undefined) {
-      const createResult = await invokeContract(
-        "create_challenge",
-        [
-          addressScVal(mentor.walletAddress),
-          stringScVal(challenge.title),
-          i128ScVal(Math.round(challenge.reward * 10_000_000)), // XLM -> stroops
-          addressScVal(NATIVE_XLM_SAC),
-        ],
-        mentor.walletSecret
-      );
-      onChainId = createResult.returnValue;
+    const { onChainId, txHash } = req.body;
+    if (onChainId === undefined || !txHash) {
+      return res.status(400).json({ error: "onChainId and txHash are required from the frontend" });
     }
-
-    // 2. fund_reward_pool on-chain
-    const fundResult = await invokeContract(
-      "fund_reward_pool",
-      [addressScVal(mentor.walletAddress), u64ScVal(onChainId)],
-      mentor.walletSecret
-    );
 
     challenge.onChainId = onChainId;
     challenge.contractStatus = "funded";
     challenge.status = "funded";
-    challenge.fundingTxHash = fundResult.hash;
+    challenge.fundingTxHash = txHash;
     await challenge.save();
 
-    res.json({ challenge, txHash: fundResult.hash });
+    res.json({ challenge, txHash });
   } catch (err) {
     next(err);
   }
