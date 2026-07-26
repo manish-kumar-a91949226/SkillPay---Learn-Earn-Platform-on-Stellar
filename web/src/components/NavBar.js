@@ -40,7 +40,7 @@ export default function NavBar() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm text-bone-dim">
-          <Link href="/challenges" className="hover:text-bone transition-colors" title="Browse open challenges">
+          <Link href="/challenges" data-tooltip="Browse all open challenges" className="hover:text-bone transition-colors" title="Browse open challenges">
             Challenges
           </Link>
           <Link href="/leaderboard" className="hover:text-bone transition-colors" title="View top earners">
