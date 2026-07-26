@@ -1,6 +1,8 @@
 "use client";
 import NavBar from "../../components/NavBar";
 
+export const sortEarners = (earners) => [...earners].sort((a, b) => b.earnings - a.earnings);
+
 export default function LeaderboardPage() {
   const topEarners = [
     { rank: 1, name: "Shaurya Patel", earnings: 200 },
