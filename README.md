@@ -7,8 +7,8 @@ A production-ready blockchain-powered Learn & Earn platform built on the Stellar
 - **Backend API:** [https://skillpay-learn-earn-platform-on-stellar-1.onrender.com](https://skillpay-learn-earn-platform-on-stellar-1.onrender.com)
 - **Video Demo:** [Watch Full Demo on Google Drive](https://drive.google.com/file/d/1_5O4pPmIC3JsgRT0JEhz7jGA1-oIckYB/view?usp=sharing)
 - **Platform Escrow / Contract Address (Testnet):** `GBCPCCSQGQ33Q65GIDG43KOKWG2HKP7QGDLMDGRVLWMGJYVTBKKV3RDE`
-- **Google Form link** [Feedback form link](https://docs.google.com/forms/d/e/1FAIpQLSdwt1mz5A3IKvZoI6kiH52LoN1h5WkiqwUYGE6zi9-6j6C_1A/viewform?usp=publish-editor)
-- **Response Sheet** [Response sheet link](https://docs.google.com/spreadsheets/d/15-8E9v3UP-PvwJRUF0cK7jYbH0j9I4kenrCMSfCO0LY/edit?usp=sharing)
+- **Google Form link** [Feedback form link](https://docs.google.com/forms/d/18ZdVcg3EJZGDczOBrLtT6BfQ9pD6tuC1j045iKG5GdQ/edit#responses)
+- **Response Sheet** [Response sheet link](https://docs.google.com/spreadsheets/d/1f5o7uM2zVc8npmWXkxoKc1GUqZ5ywNbdtSjyFSG9EGI/edit?usp=sharing)
 
 ---
 
@@ -40,31 +40,29 @@ A production-ready blockchain-powered Learn & Earn platform built on the Stellar
 
 ---
 
-
 ## 👥 User Onboarding
 
 Every learner is instantly onboarded with a Stellar Testnet wallet upon signup. Mentors connect their own Freighter wallets.
 
 | Name | Role | Wallet Address | Reward | Tx Hash (Explorer) |
 |---|---|---|---|---|
-| Vivaan Reddy | Learner | `GBMRDDJKNDUT7DJFRGF2EPEQIXEXNTDMTR6JXRW2ANUC4DG6QZ2IANQX` | 40 XLM | [link](https://stellar.expert/explorer/testnet/tx/d640ce29d74c8ae313e7b04b87f2a3a1bfd1bdb2636d57d02bcc55666e3bfb7f) |
-| Shaurya Patel | Learner | `GBZTSNY2O2RFRD3F7BPUQSP6WE6RF7CN4E2XRRUWF4VL6S2AXZQNOSPT` | 200 XLM | [link](https://stellar.expert/explorer/testnet/tx/01be5b7100b19746c37d018b2387dd7b0e0666f4c03f7bf90809895fb728e8dc) |
-| Sneha Rao | Learner | `GDN6WZ7UDERSQ5MOWLHSKLL4IHMVOIHPIZUQLANDFSNVA3TGD6YT3ZVS` | 150 XLM | [link](https://stellar.expert/explorer/testnet/tx/97a9b01f7073f256bf5d330ec80f49cd061b9d5cb2957cdfccc925f08fbcbe0c) |
-| Anjali Iyer | Learner | `GBAGQX7FLT7TOH5UE26POB475UOLU4Q7UETHOLEGTGBXQYTHHIE6LL5P` | 100 XLM | [link](https://stellar.expert/explorer/testnet/tx/d22c633f6ab0605bc2d106351baebf289364e794ef81a552f765558d2941d878) |
-| Vikram Singh | Learner | `GAXVRKNRTHOJSZXRFDK5T5VFFEUG3KAB4JZ3BFA5OFAOHWLXX6HJ26JD` | 150 XLM | [link](https://stellar.expert/explorer/testnet/tx/f322d736f890498d540528df20638dafb6f2cf70bfc2eea45eb4a0055a0dee41) |
-| Rahul Shah | Learner | `GBWQRKIDHYCXE26GSYASW5VT5WIZOGLH7OA7SMWVQF553EHTG6Q54GKM` | 30 XLM | [link](https://stellar.expert/explorer/testnet/tx/2220132f38b187cf19818353b5692b361d57b76a15b29811220f4c40e321f418) |
-| Karan Pillai | Learner | `GCCAJ5FZ6S3XKMDBMQLKAQC3OCLFVKYY7PRQIF7BQ27IRWQD4B2OZOWP` | 120 XLM | [link](https://stellar.expert/explorer/testnet/tx/55552bc1a3c0f4b3639ee9f74400753144fc5b69e2b2bc75aedf54edb93fedf1) |
-| Pooja Pillai | Learner | `GC5ZDVGRSOXRPKKIOXJSOEYEAPXH4RIEOR5DH5WQ2XECWGOOQ47SZQF6` | 80 XLM | [link](https://stellar.expert/explorer/testnet/tx/a5e2d4df4726c528dd727e3aae0cac1a5d5ca0b216f01a5c740ec23109d4fb77) |
-| Arjun Banerjee | Learner | `GAHTF7KDHANNJQ5N3YEQRL56HM44PVH24IM3RM57ESBRP3GYM6EIDDJK` | 100 XLM | [link](https://stellar.expert/explorer/testnet/tx/31b8502382043b22e55e5da3a52ec1fb59c40d56f4c20d5280ade80abb3e4b4a) |
-| Swati Verma | Learner | `GAXJGPQ62NR2ML2RKV2ZSVGQ6Q55Y2AYX6BOWOQYBOWDCSD5IOQH2R7U` | 120 XLM | [link](https://stellar.expert/explorer/testnet/tx/3b0af432322a52bc8e4071ddb555d7ce3ad15d991f9e1dcd4617bc5ac00a13ef) |
-| Diya Desai | Learner | `GCZ4KZ2QOCABBLCSQM2CQJ7ESZFN2R6K432BEXES6WFZEPDVV26FQFSO` | 120 XLM | [link](https://stellar.expert/explorer/testnet/tx/355ec350147722ae1751b2eb3c26d27d6d561c5724f75ea9f45c46fdd9df3404) |
-| Vihaan Chatterjee | Learner | `GDGME554REKEKSHN6CQOHDT3NWP22KHAGYMDBTOCJM7S7HPFR6FXWKVL` | 50 XLM | [link](https://stellar.expert/explorer/testnet/tx/3a8e4de6944db77873af2acbb542ab0520fc12ed7e17ca5bcc21233e4ce924c0) |
-| Swati Das | Learner | `GCHO2ZDSSQYXZNG5TXHQ63PUMFUNX43OOC5FLRLR6J22H4EHK5JXKIVK` | 80 XLM | [link](https://stellar.expert/explorer/testnet/tx/605dd16f5e26807d4ceb28bf99a23349af12cd4cc87af8b9dd43e1478b42a754) |
-| Aarohi Kulkarni | Learner | `GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR` | 150 XLM | [link](https://stellar.expert/explorer/testnet/tx/5a980eb51ae173a175da389745c415d0e57a7bb11fd1b5577806eef691fda2c4) |
+| Vivaan Reddy | Learner | `GC24KEOLHDJI2S4ICD5BYKP5NIPLROSIOLAES5D7MFZWYIYRH5CA3S4G` | 150 XLM | [link](https://stellar.expert/explorer/testnet/tx/97414634878488b54718210a1a98cf35c7452205afa44bcb893754e05bf2f089) |
+| Shaurya Patel | Learner | `GCANYTJRC337HAPWNC2PKSSPEJYFVKNSUNSCVLGOEMIOLFBC2HCLLZL2` | 40 XLM | [link](https://stellar.expert/explorer/testnet/tx/29fe50ea9c76cfe6b9080b4b4a0302fa46ebf3378a76d544d1def8a4a105509b) |
+| Sneha Rao | Learner | `GD45AKYNUNQPLVY2GREURWQTIUFA3PPZGO4TCUIIATOPYXCMJS6EC5W4` | 350 XLM | [link](https://stellar.expert/explorer/testnet/tx/a55bd8104768a46ad7ea900d8a3a8d3a8bd20bd4c15dd2b4ed135860ceebfb60) |
+| Anjali Iyer | Learner | `GCVSFXQW3BUUGV2QAX5CPIIWDAXAANCXL6NAQ46ZUPQWOURH2OGIYLRC` | 80 XLM | [link](https://stellar.expert/explorer/testnet/tx/e0a0e7f0fe25d5ccd47908ac841084447e093e3b02ca16c964e8e22dd8c928f9) |
+| Vikram Singh | Learner | `GAJTDUXOQV5CNNO3KO7AGWCD5SMLHJZQJVKW2N4R6GIL7YIHTYG6DA3E` | 200 XLM | [link](https://stellar.expert/explorer/testnet/tx/184687f4351756954445b4656ef1cbc7ade7db000b5572a93743099d1797173d) |
+| Rahul Shah | Learner | `GA4CMTD7VOE2N4PW22FHAWNNJPQS766RKEJMDUVWTUEOFTQPJQQ3HCUV` | 120 XLM | [link](https://stellar.expert/explorer/testnet/tx/09de1ca893583be71e8db5a14b95a0985ebfd41ffe2f57d85ce12239ea73aae4) |
+| Karan Pillai | Learner | `GCV6B524BDB67F65EHH5URY5G6E72WQ5I5ZASMU5IFBRNHT7OXVEEIJB` | 50 XLM | [link](https://stellar.expert/explorer/testnet/tx/61a74191cefc647acbdd7ee60270f8ace8089c714a612ef32ea41a0d1d3ce10e) |
+| Pooja Pillai | Learner | `GBQS3HZETLJQR3TSEXX3I4R2D5XRELMAZZVGC6O5JZM3BGPQMWGHCVOX` | 250 XLM | [link](https://stellar.expert/explorer/testnet/tx/ca6dd06934fb0d4ea81aac59add5c728b0990129f6d2ea377f64f164c1b566f0) |
+| Arjun Banerjee | Learner | `GC755JZASQBVF3QMCFWX5XUF57JXESJ3JOOB2JJQN3EAM2KQ6BG5BGUD` | 100 XLM | [link](https://stellar.expert/explorer/testnet/tx/130679db1f10e9e743e1a8906899b4b4203a12fb718cb774b0ab89bfa388d607) |
+| Rohan Kulkarni | Learner | `GAWBKWZXLRXY3HZQFAXQN5YUX32T36P67ZJCYF2RF4T57AGOXNU2H76R` | 180 XLM | [link](https://stellar.expert/explorer/testnet/tx/41d93c987416f85ebc2cc9701189d7faf9191f504fa0eff576134f309e650cbc) |
+| Swati Verma | Learner | `GBJA3ATUF37FKBUP7IK2DTB7KTW5PGRC5VSB2LNF2V63P4PVYNYEN5MV` | 90 XLM | [link](https://stellar.expert/explorer/testnet/tx/a3a734809f729b843ecadbd85d40943aa71f0378f331cea1bd3d1d7c90f63ee8) |
+| Diya Desai | Learner | `GAYI4M3Y56QXICFZ5BUJOEOFN4ZROGJQUUAGK7L3AZY6HFKDMB4ROF4V` | 300 XLM | [link](https://stellar.expert/explorer/testnet/tx/9a20922d20c8c9c45af6bb6e07ea4c534bd4f2f785e4bd1dd89525903d5358da) |
+| Vihaan Chatterjee | Learner | `GDJTSTRUKLBOQZDOANROMPREL6YNF7Q6P5ANS7KKCRYUXXH3IDIVACJC` | 150 XLM | [link](https://stellar.expert/explorer/testnet/tx/b8a78efcfacce04196602f63c8d21571f9ad046de5f21f1e728f367e7c4b10da) |
+| Swati Das | Learner | `GC3CG73ESGFNSALQ2E2AKSMGVASBCXZFDQTLOU3UA2KMUQ5CFXBFQCWQ` | 500 XLM | [link](https://stellar.expert/explorer/testnet/tx/1ce3fedd67193484ac48c0c8e03cf407cef826750a51c753c1d2bb839cde71fb) |
+| Aarohi Kulkarni | Learner | `GB2IZCIITKY4IQVORHZWYTYUFHWQFXTD27MLVSIM3U5Y7SFBRHAVGMOH` | 220 XLM | [link](https://stellar.expert/explorer/testnet/tx/1a54e5d0d77ac074e7f25a4fd7e8c926dc4951f3f9f4fccd09a0e8ce251f5419) |
 
 ---
-
-
 
 <details>
 <summary><b>View JSON Proof of Transactions</b></summary>
@@ -74,119 +72,126 @@ Every learner is instantly onboarded with a Stellar Testnet wallet upon signup. 
   {
     "Name": "Vivaan Reddy",
     "Role": "Learner",
-    "Wallet_Address": "GBMRDDJKNDUT7DJFRGF2EPEQIXEXNTDMTR6JXRW2ANUC4DG6QZ2IANQX",
-    "Latest_Reward_Amount": "40 XLM",
-    "Transaction_Hash": "d640ce29d74c8ae313e7b04b87f2a3a1bfd1bdb2636d57d02bcc55666e3bfb7f",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/d640ce29d74c8ae313e7b04b87f2a3a1bfd1bdb2636d57d02bcc55666e3bfb7f"
+    "Wallet_Address": "GC24KEOLHDJI2S4ICD5BYKP5NIPLROSIOLAES5D7MFZWYIYRH5CA3S4G",
+    "Latest_Reward_Amount": "150 XLM",
+    "Transaction_Hash": "97414634878488b54718210a1a98cf35c7452205afa44bcb893754e05bf2f089",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/97414634878488b54718210a1a98cf35c7452205afa44bcb893754e05bf2f089"
   },
   {
     "Name": "Shaurya Patel",
     "Role": "Learner",
-    "Wallet_Address": "GBZTSNY2O2RFRD3F7BPUQSP6WE6RF7CN4E2XRRUWF4VL6S2AXZQNOSPT",
-    "Latest_Reward_Amount": "200 XLM",
-    "Transaction_Hash": "01be5b7100b19746c37d018b2387dd7b0e0666f4c03f7bf90809895fb728e8dc",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/01be5b7100b19746c37d018b2387dd7b0e0666f4c03f7bf90809895fb728e8dc"
+    "Wallet_Address": "GCANYTJRC337HAPWNC2PKSSPEJYFVKNSUNSCVLGOEMIOLFBC2HCLLZL2",
+    "Latest_Reward_Amount": "40 XLM",
+    "Transaction_Hash": "29fe50ea9c76cfe6b9080b4b4a0302fa46ebf3378a76d544d1def8a4a105509b",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/29fe50ea9c76cfe6b9080b4b4a0302fa46ebf3378a76d544d1def8a4a105509b"
   },
   {
     "Name": "Sneha Rao",
     "Role": "Learner",
-    "Wallet_Address": "GDN6WZ7UDERSQ5MOWLHSKLL4IHMVOIHPIZUQLANDFSNVA3TGD6YT3ZVS",
-    "Latest_Reward_Amount": "150 XLM",
-    "Transaction_Hash": "97a9b01f7073f256bf5d330ec80f49cd061b9d5cb2957cdfccc925f08fbcbe0c",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/97a9b01f7073f256bf5d330ec80f49cd061b9d5cb2957cdfccc925f08fbcbe0c"
+    "Wallet_Address": "GD45AKYNUNQPLVY2GREURWQTIUFA3PPZGO4TCUIIATOPYXCMJS6EC5W4",
+    "Latest_Reward_Amount": "350 XLM",
+    "Transaction_Hash": "a55bd8104768a46ad7ea900d8a3a8d3a8bd20bd4c15dd2b4ed135860ceebfb60",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/a55bd8104768a46ad7ea900d8a3a8d3a8bd20bd4c15dd2b4ed135860ceebfb60"
   },
   {
     "Name": "Anjali Iyer",
     "Role": "Learner",
-    "Wallet_Address": "GBAGQX7FLT7TOH5UE26POB475UOLU4Q7UETHOLEGTGBXQYTHHIE6LL5P",
-    "Latest_Reward_Amount": "100 XLM",
-    "Transaction_Hash": "d22c633f6ab0605bc2d106351baebf289364e794ef81a552f765558d2941d878",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/d22c633f6ab0605bc2d106351baebf289364e794ef81a552f765558d2941d878"
+    "Wallet_Address": "GCVSFXQW3BUUGV2QAX5CPIIWDAXAANCXL6NAQ46ZUPQWOURH2OGIYLRC",
+    "Latest_Reward_Amount": "80 XLM",
+    "Transaction_Hash": "e0a0e7f0fe25d5ccd47908ac841084447e093e3b02ca16c964e8e22dd8c928f9",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/e0a0e7f0fe25d5ccd47908ac841084447e093e3b02ca16c964e8e22dd8c928f9"
   },
   {
     "Name": "Vikram Singh",
     "Role": "Learner",
-    "Wallet_Address": "GAXVRKNRTHOJSZXRFDK5T5VFFEUG3KAB4JZ3BFA5OFAOHWLXX6HJ26JD",
-    "Latest_Reward_Amount": "150 XLM",
-    "Transaction_Hash": "f322d736f890498d540528df20638dafb6f2cf70bfc2eea45eb4a0055a0dee41",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/f322d736f890498d540528df20638dafb6f2cf70bfc2eea45eb4a0055a0dee41"
+    "Wallet_Address": "GAJTDUXOQV5CNNO3KO7AGWCD5SMLHJZQJVKW2N4R6GIL7YIHTYG6DA3E",
+    "Latest_Reward_Amount": "200 XLM",
+    "Transaction_Hash": "184687f4351756954445b4656ef1cbc7ade7db000b5572a93743099d1797173d",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/184687f4351756954445b4656ef1cbc7ade7db000b5572a93743099d1797173d"
   },
   {
     "Name": "Rahul Shah",
     "Role": "Learner",
-    "Wallet_Address": "GBWQRKIDHYCXE26GSYASW5VT5WIZOGLH7OA7SMWVQF553EHTG6Q54GKM",
-    "Latest_Reward_Amount": "30 XLM",
-    "Transaction_Hash": "2220132f38b187cf19818353b5692b361d57b76a15b29811220f4c40e321f418",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/2220132f38b187cf19818353b5692b361d57b76a15b29811220f4c40e321f418"
+    "Wallet_Address": "GA4CMTD7VOE2N4PW22FHAWNNJPQS766RKEJMDUVWTUEOFTQPJQQ3HCUV",
+    "Latest_Reward_Amount": "120 XLM",
+    "Transaction_Hash": "09de1ca893583be71e8db5a14b95a0985ebfd41ffe2f57d85ce12239ea73aae4",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/09de1ca893583be71e8db5a14b95a0985ebfd41ffe2f57d85ce12239ea73aae4"
   },
   {
     "Name": "Karan Pillai",
     "Role": "Learner",
-    "Wallet_Address": "GCCAJ5FZ6S3XKMDBMQLKAQC3OCLFVKYY7PRQIF7BQ27IRWQD4B2OZOWP",
-    "Latest_Reward_Amount": "120 XLM",
-    "Transaction_Hash": "55552bc1a3c0f4b3639ee9f74400753144fc5b69e2b2bc75aedf54edb93fedf1",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/55552bc1a3c0f4b3639ee9f74400753144fc5b69e2b2bc75aedf54edb93fedf1"
+    "Wallet_Address": "GCV6B524BDB67F65EHH5URY5G6E72WQ5I5ZASMU5IFBRNHT7OXVEEIJB",
+    "Latest_Reward_Amount": "50 XLM",
+    "Transaction_Hash": "61a74191cefc647acbdd7ee60270f8ace8089c714a612ef32ea41a0d1d3ce10e",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/61a74191cefc647acbdd7ee60270f8ace8089c714a612ef32ea41a0d1d3ce10e"
   },
   {
     "Name": "Pooja Pillai",
     "Role": "Learner",
-    "Wallet_Address": "GC5ZDVGRSOXRPKKIOXJSOEYEAPXH4RIEOR5DH5WQ2XECWGOOQ47SZQF6",
-    "Latest_Reward_Amount": "80 XLM",
-    "Transaction_Hash": "a5e2d4df4726c528dd727e3aae0cac1a5d5ca0b216f01a5c740ec23109d4fb77",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/a5e2d4df4726c528dd727e3aae0cac1a5d5ca0b216f01a5c740ec23109d4fb77"
+    "Wallet_Address": "GBQS3HZETLJQR3TSEXX3I4R2D5XRELMAZZVGC6O5JZM3BGPQMWGHCVOX",
+    "Latest_Reward_Amount": "250 XLM",
+    "Transaction_Hash": "ca6dd06934fb0d4ea81aac59add5c728b0990129f6d2ea377f64f164c1b566f0",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/ca6dd06934fb0d4ea81aac59add5c728b0990129f6d2ea377f64f164c1b566f0"
   },
   {
     "Name": "Arjun Banerjee",
     "Role": "Learner",
-    "Wallet_Address": "GAHTF7KDHANNJQ5N3YEQRL56HM44PVH24IM3RM57ESBRP3GYM6EIDDJK",
+    "Wallet_Address": "GC755JZASQBVF3QMCFWX5XUF57JXESJ3JOOB2JJQN3EAM2KQ6BG5BGUD",
     "Latest_Reward_Amount": "100 XLM",
-    "Transaction_Hash": "31b8502382043b22e55e5da3a52ec1fb59c40d56f4c20d5280ade80abb3e4b4a",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/31b8502382043b22e55e5da3a52ec1fb59c40d56f4c20d5280ade80abb3e4b4a"
+    "Transaction_Hash": "130679db1f10e9e743e1a8906899b4b4203a12fb718cb774b0ab89bfa388d607",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/130679db1f10e9e743e1a8906899b4b4203a12fb718cb774b0ab89bfa388d607"
+  },
+  {
+    "Name": "Rohan Kulkarni",
+    "Role": "Learner",
+    "Wallet_Address": "GAWBKWZXLRXY3HZQFAXQN5YUX32T36P67ZJCYF2RF4T57AGOXNU2H76R",
+    "Latest_Reward_Amount": "180 XLM",
+    "Transaction_Hash": "41d93c987416f85ebc2cc9701189d7faf9191f504fa0eff576134f309e650cbc",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/41d93c987416f85ebc2cc9701189d7faf9191f504fa0eff576134f309e650cbc"
   },
   {
     "Name": "Swati Verma",
     "Role": "Learner",
-    "Wallet_Address": "GAXJGPQ62NR2ML2RKV2ZSVGQ6Q55Y2AYX6BOWOQYBOWDCSD5IOQH2R7U",
-    "Latest_Reward_Amount": "120 XLM",
-    "Transaction_Hash": "3b0af432322a52bc8e4071ddb555d7ce3ad15d991f9e1dcd4617bc5ac00a13ef",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/3b0af432322a52bc8e4071ddb555d7ce3ad15d991f9e1dcd4617bc5ac00a13ef"
+    "Wallet_Address": "GBJA3ATUF37FKBUP7IK2DTB7KTW5PGRC5VSB2LNF2V63P4PVYNYEN5MV",
+    "Latest_Reward_Amount": "90 XLM",
+    "Transaction_Hash": "a3a734809f729b843ecadbd85d40943aa71f0378f331cea1bd3d1d7c90f63ee8",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/a3a734809f729b843ecadbd85d40943aa71f0378f331cea1bd3d1d7c90f63ee8"
   },
   {
     "Name": "Diya Desai",
     "Role": "Learner",
-    "Wallet_Address": "GCZ4KZ2QOCABBLCSQM2CQJ7ESZFN2R6K432BEXES6WFZEPDVV26FQFSO",
-    "Latest_Reward_Amount": "120 XLM",
-    "Transaction_Hash": "355ec350147722ae1751b2eb3c26d27d6d561c5724f75ea9f45c46fdd9df3404",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/355ec350147722ae1751b2eb3c26d27d6d561c5724f75ea9f45c46fdd9df3404"
+    "Wallet_Address": "GAYI4M3Y56QXICFZ5BUJOEOFN4ZROGJQUUAGK7L3AZY6HFKDMB4ROF4V",
+    "Latest_Reward_Amount": "300 XLM",
+    "Transaction_Hash": "9a20922d20c8c9c45af6bb6e07ea4c534bd4f2f785e4bd1dd89525903d5358da",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/9a20922d20c8c9c45af6bb6e07ea4c534bd4f2f785e4bd1dd89525903d5358da"
   },
   {
     "Name": "Vihaan Chatterjee",
     "Role": "Learner",
-    "Wallet_Address": "GDGME554REKEKSHN6CQOHDT3NWP22KHAGYMDBTOCJM7S7HPFR6FXWKVL",
-    "Latest_Reward_Amount": "50 XLM",
-    "Transaction_Hash": "3a8e4de6944db77873af2acbb542ab0520fc12ed7e17ca5bcc21233e4ce924c0",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/3a8e4de6944db77873af2acbb542ab0520fc12ed7e17ca5bcc21233e4ce924c0"
+    "Wallet_Address": "GDJTSTRUKLBOQZDOANROMPREL6YNF7Q6P5ANS7KKCRYUXXH3IDIVACJC",
+    "Latest_Reward_Amount": "150 XLM",
+    "Transaction_Hash": "b8a78efcfacce04196602f63c8d21571f9ad046de5f21f1e728f367e7c4b10da",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/b8a78efcfacce04196602f63c8d21571f9ad046de5f21f1e728f367e7c4b10da"
   },
   {
     "Name": "Swati Das",
     "Role": "Learner",
-    "Wallet_Address": "GCHO2ZDSSQYXZNG5TXHQ63PUMFUNX43OOC5FLRLR6J22H4EHK5JXKIVK",
-    "Latest_Reward_Amount": "80 XLM",
-    "Transaction_Hash": "605dd16f5e26807d4ceb28bf99a23349af12cd4cc87af8b9dd43e1478b42a754",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/605dd16f5e26807d4ceb28bf99a23349af12cd4cc87af8b9dd43e1478b42a754"
+    "Wallet_Address": "GC3CG73ESGFNSALQ2E2AKSMGVASBCXZFDQTLOU3UA2KMUQ5CFXBFQCWQ",
+    "Latest_Reward_Amount": "500 XLM",
+    "Transaction_Hash": "1ce3fedd67193484ac48c0c8e03cf407cef826750a51c753c1d2bb839cde71fb",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/1ce3fedd67193484ac48c0c8e03cf407cef826750a51c753c1d2bb839cde71fb"
   },
   {
     "Name": "Aarohi Kulkarni",
     "Role": "Learner",
-    "Wallet_Address": "GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR",
-    "Latest_Reward_Amount": "150 XLM",
-    "Transaction_Hash": "5a980eb51ae173a175da389745c415d0e57a7bb11fd1b5577806eef691fda2c4",
-    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/5a980eb51ae173a175da389745c415d0e57a7bb11fd1b5577806eef691fda2c4"
+    "Wallet_Address": "GB2IZCIITKY4IQVORHZWYTYUFHWQFXTD27MLVSIM3U5Y7SFBRHAVGMOH",
+    "Latest_Reward_Amount": "220 XLM",
+    "Transaction_Hash": "1a54e5d0d77ac074e7f25a4fd7e8c926dc4951f3f9f4fccd09a0e8ce251f5419",
+    "Explorer_Link": "https://stellar.expert/explorer/testnet/tx/1a54e5d0d77ac074e7f25a4fd7e8c926dc4951f3f9f4fccd09a0e8ce251f5419"
   }
 ]
 ```
 </details>
-
 
 ## 💬 Improvement Summary
 
@@ -196,21 +201,21 @@ We implemented a built-in Feedback Widget on the platform. Based on the feedback
 
 | User ID | Name | Email | Wallet Address | Feedback Summary |
 |---|---|---|---|---|
-| U001 | Vivaan Reddy | vivaanreddy1834@gmail.com | `GBMRDDJKNDUT7DJFRGF2EPEQIXEXNTDMTR6JXRW2ANUC4DG6QZ2IANQX` | "Allow saving draft submissions" |
-| U002 | Shaurya Patel | shauryapatel419@gmail.com | `GBZTSNY2O2RFRD3F7BPUQSP6WE6RF7CN4E2XRRUWF4VL6S2AXZQNOSPT` | "A way to message mentors directly" |
-| U003 | Sneha Rao | sneharao4516@gmail.com | `GDN6WZ7UDERSQ5MOWLHSKLL4IHMVOIHPIZUQLANDFSNVA3TGD6YT3ZVS` | "Add a progress bar for challenge completion" |
-| U004 | Anjali Iyer | anjaliiyer4022@gmail.com | `GBAGQX7FLT7TOH5UE26POB475UOLU4Q7UETHOLEGTGBXQYTHHIE6LL5P` | "Allow filtering challenges by difficulty" |
-| U005 | Vikram Singh | vikramsingh3667@gmail.com | `GAXVRKNRTHOJSZXRFDK5T5VFFEUG3KAB4JZ3BFA5OFAOHWLXX6HJ26JD` | "Add a leaderboard for top earners" |
-| U006 | Rahul Shah | rahulshah2296@gmail.com | `GBWQRKIDHYCXE26GSYASW5VT5WIZOGLH7OA7SMWVQF553EHTG6Q54GKM` | "Show estimated network fees upfront" |
-| U007 | Karan Pillai | karanpillai1689@gmail.com | `GCCAJ5FZ6S3XKMDBMQLKAQC3OCLFVKYY7PRQIF7BQ27IRWQD4B2OZOWP` | "Include more onboarding tooltips" |
-| U008 | Pooja Pillai | poojapillai8945@gmail.com | `GC5ZDVGRSOXRPKKIOXJSOEYEAPXH4RIEOR5DH5WQ2XECWGOOQ47SZQF6` | "Detailed transaction history page" |
-| U009 | Arjun Banerjee | arjunbanerjee1434@gmail.com | `GAHTF7KDHANNJQ5N3YEQRL56HM44PVH24IM3RM57ESBRP3GYM6EIDDJK` | "More notifications (maybe email alerts?)" |
-| U010 | Rohan Kulkarni | rohankulkarni9684@gmail.com | `GBH4UPXRLPA2CXHKBZ5U6XAGYYDKUSN3VWFTEBD73BJV5I23HQXZMGE5` | "Add support for multiple languages" |
-| U011 | Swati Verma | swativerma6922@gmail.com | `GAXJGPQ62NR2ML2RKV2ZSVGQ6Q55Y2AYX6BOWOQYBOWDCSD5IOQH2R7U` | "More challenges from different domains" |
-| U012 | Diya Desai | diyadesai530@gmail.com | `GCZ4KZ2QOCABBLCSQM2CQJ7ESZFN2R6K432BEXES6WFZEPDVV26FQFSO` | "Support for other wallets besides Freighter" |
-| U013 | Vihaan Chatterjee | vihaanchatterjee498@gmail.com | `GDGME554REKEKSHN6CQOHDT3NWP22KHAGYMDBTOCJM7S7HPFR6FXWKVL` | "More chart options in the analytics section" |
-| U014 | Swati Das | swatidas1545@gmail.com | `GCHO2ZDSSQYXZNG5TXHQ63PUMFUNX43OOC5FLRLR6J22H4EHK5JXKIVK` | "Better mobile view for the dashboard" |
-| U015 | Aarohi Kulkarni | aarohikulkarni3592@gmail.com | `GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR` | "Add dark mode toggle" |
+| U001 | Vivaan Reddy | vivaanreddy1834@gmail.com | `GC24KEOLHDJI2S4ICD5BYKP5NIPLROSIOLAES5D7MFZWYIYRH5CA3S4G` | "Allow saving draft submissions" |
+| U002 | Shaurya Patel | shauryapatel419@gmail.com | `GCANYTJRC337HAPWNC2PKSSPEJYFVKNSUNSCVLGOEMIOLFBC2HCLLZL2` | "A way to message mentors directly" |
+| U003 | Sneha Rao | sneharao4516@gmail.com | `GD45AKYNUNQPLVY2GREURWQTIUFA3PPZGO4TCUIIATOPYXCMJS6EC5W4` | "Add a progress bar for challenge completion" |
+| U004 | Anjali Iyer | anjaliiyer4022@gmail.com | `GCVSFXQW3BUUGV2QAX5CPIIWDAXAANCXL6NAQ46ZUPQWOURH2OGIYLRC` | "Allow filtering challenges by difficulty" |
+| U005 | Vikram Singh | vikramsingh3667@gmail.com | `GAJTDUXOQV5CNNO3KO7AGWCD5SMLHJZQJVKW2N4R6GIL7YIHTYG6DA3E` | "Add a leaderboard for top earners" |
+| U006 | Rahul Shah | rahulshah2296@gmail.com | `GA4CMTD7VOE2N4PW22FHAWNNJPQS766RKEJMDUVWTUEOFTQPJQQ3HCUV` | "Show estimated network fees upfront" |
+| U007 | Karan Pillai | karanpillai1689@gmail.com | `GCV6B524BDB67F65EHH5URY5G6E72WQ5I5ZASMU5IFBRNHT7OXVEEIJB` | "Include more onboarding tooltips" |
+| U008 | Pooja Pillai | poojapillai8945@gmail.com | `GBQS3HZETLJQR3TSEXX3I4R2D5XRELMAZZVGC6O5JZM3BGPQMWGHCVOX` | "Detailed transaction history page" |
+| U009 | Arjun Banerjee | arjunbanerjee1434@gmail.com | `GC755JZASQBVF3QMCFWX5XUF57JXESJ3JOOB2JJQN3EAM2KQ6BG5BGUD` | "More notifications (maybe email alerts?)" |
+| U010 | Rohan Kulkarni | rohankulkarni9684@gmail.com | `GAWBKWZXLRXY3HZQFAXQN5YUX32T36P67ZJCYF2RF4T57AGOXNU2H76R` | "Add support for multiple languages" |
+| U011 | Swati Verma | swativerma6922@gmail.com | `GBJA3ATUF37FKBUP7IK2DTB7KTW5PGRC5VSB2LNF2V63P4PVYNYEN5MV` | "More challenges from different domains" |
+| U012 | Diya Desai | diyadesai530@gmail.com | `GAYI4M3Y56QXICFZ5BUJOEOFN4ZROGJQUUAGK7L3AZY6HFKDMB4ROF4V` | "Support for other wallets besides Freighter" |
+| U013 | Vihaan Chatterjee | vihaanchatterjee498@gmail.com | `GDJTSTRUKLBOQZDOANROMPREL6YNF7Q6P5ANS7KKCRYUXXH3IDIVACJC` | "More chart options in the analytics section" |
+| U014 | Swati Das | swatidas1545@gmail.com | `GC3CG73ESGFNSALQ2E2AKSMGVASBCXZFDQTLOU3UA2KMUQ5CFXBFQCWQ` | "Better mobile view for the dashboard" |
+| U015 | Aarohi Kulkarni | aarohikulkarni3592@gmail.com | `GB2IZCIITKY4IQVORHZWYTYUFHWQFXTD27MLVSIM3U5Y7SFBRHAVGMOH` | "Add dark mode toggle" |
 
 ### 📊 Feedback Implementation
 
@@ -218,13 +223,13 @@ Based on the actual submitted feedback, we executed the following product iterat
 
 | User ID | Name | Email | Wallet Address | Feedback Summary | Improvement Made | Git Commit ID |
 |---|---|---|---|---|---|---|
-| U006 | Rahul Shah | rahulshah2296@gmail.com | `GBWQRKIDHYCXE26GSYASW5VT5WIZOGLH7OA7SMWVQF553EHTG6Q54GKM` | "Show estimated network fees upfront" | **Estimated Network Fees:** Added an estimated network fee tooltip directly to the user's XLM wallet balance display. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
-| U007 | Karan Pillai | karanpillai1689@gmail.com | `GCCAJ5FZ6S3XKMDBMQLKAQC3OCLFVKYY7PRQIF7BQ27IRWQD4B2OZOWP` | "Include more onboarding tooltips" | **Onboarding Tooltips:** Added descriptive hover tooltips to primary navigation links (Dashboard, Challenges, New Challenge) to guide new users. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
-| U004 | Anjali Iyer | anjaliiyer4022@gmail.com | `GBAGQX7FLT7TOH5UE26POB475UOLU4Q7UETHOLEGTGBXQYTHHIE6LL5P` | "Allow filtering challenges by difficulty" | **Difficulty Filtering:** Added a functional difficulty filter dropdown on the Challenges browsing page to help users find appropriate tasks. | [770981c](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/770981cf4a5b6855faa8f6f6b2dc664df5bfa583) |
-| U003 | Sneha Rao | sneharao4516@gmail.com | `GDN6WZ7UDERSQ5MOWLHSKLL4IHMVOIHPIZUQLANDFSNVA3TGD6YT3ZVS` | "Add a progress bar for challenge completion" | **Level Progress Bar:** Added a visual progress bar on the learner dashboard to track completed challenges. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
-| U005 | Vikram Singh | vikramsingh3667@gmail.com | `GAXVRKNRTHOJSZXRFDK5T5VFFEUG3KAB4JZ3BFA5OFAOHWLXX6HJ26JD` | "Add a leaderboard for top earners" | **Leaderboard:** Created a dedicated `/leaderboard` page showcasing top earners to gamify the platform. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
-| U014 | Swati Das | swatidas1545@gmail.com | `GCHO2ZDSSQYXZNG5TXHQ63PUMFUNX43OOC5FLRLR6J22H4EHK5JXKIVK` | "Better mobile view for the dashboard" | **Mobile Responsiveness:** Refactored the dashboard grid layout to stack properly on mobile devices. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
-| U015 | Aarohi Kulkarni | aarohikulkarni3592@gmail.com | `GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR` | "Add dark mode toggle" | **Dark Mode Toggle:** Implemented a theme toggle button in the navigation bar with custom light/dark color variables. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
+| U003 | Sneha Rao | sneharao4516@gmail.com | `GD45AKYNUNQPLVY2GREURWQTIUFA3PPZGO4TCUIIATOPYXCMJS6EC5W4` | "Add a progress bar for challenge completion" | **Level Progress Bar:** Added a visual progress bar on the learner dashboard to track completed challenges. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
+| U004 | Anjali Iyer | anjaliiyer4022@gmail.com | `GCVSFXQW3BUUGV2QAX5CPIIWDAXAANCXL6NAQ46ZUPQWOURH2OGIYLRC` | "Allow filtering challenges by difficulty" | **Difficulty Filtering:** Added a functional difficulty filter dropdown on the Challenges browsing page to help users find appropriate tasks. | [770981c](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/770981cf4a5b6855faa8f6f6b2dc664df5bfa583) |
+| U005 | Vikram Singh | vikramsingh3667@gmail.com | `GAJTDUXOQV5CNNO3KO7AGWCD5SMLHJZQJVKW2N4R6GIL7YIHTYG6DA3E` | "Add a leaderboard for top earners" | **Leaderboard:** Created a dedicated `/leaderboard` page showcasing top earners to gamify the platform. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
+| U006 | Rahul Shah | rahulshah2296@gmail.com | `GA4CMTD7VOE2N4PW22FHAWNNJPQS766RKEJMDUVWTUEOFTQPJQQ3HCUV` | "Show estimated network fees upfront" | **Estimated Network Fees:** Added an estimated network fee tooltip directly to the user's XLM wallet balance display. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
+| U007 | Karan Pillai | karanpillai1689@gmail.com | `GCV6B524BDB67F65EHH5URY5G6E72WQ5I5ZASMU5IFBRNHT7OXVEEIJB` | "Include more onboarding tooltips" | **Onboarding Tooltips:** Added descriptive hover tooltips to primary navigation links (Dashboard, Challenges, New Challenge) to guide new users. | [d16c12b](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/d16c12bd164fa88d243924a59916fa869563ecb6) |
+| U014 | Swati Das | swatidas1545@gmail.com | `GC3CG73ESGFNSALQ2E2AKSMGVASBCXZFDQTLOU3UA2KMUQ5CFXBFQCWQ` | "Better mobile view for the dashboard" | **Mobile Responsiveness:** Refactored the dashboard grid layout to stack properly on mobile devices. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
+| U015 | Aarohi Kulkarni | aarohikulkarni3592@gmail.com | `GB2IZCIITKY4IQVORHZWYTYUFHWQFXTD27MLVSIM3U5Y7SFBRHAVGMOH` | "Add dark mode toggle" | **Dark Mode Toggle:** Implemented a theme toggle button in the navigation bar with custom light/dark color variables. | [757735f](https://github.com/manish-kumar-a91949226/SkillPay---Learn-Earn-Platform-on-Stellar/commit/757735fe10716ec6094c91f91bc0468346e254eb) |
 
 ---
 
