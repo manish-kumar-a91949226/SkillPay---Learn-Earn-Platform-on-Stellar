@@ -9,8 +9,14 @@ export const metadata = {
   title: "SkillPay — Learn. Prove it. Get paid.",
   description: "A ledger of skill, proof, and payment — built on Stellar.",
   icons: {
-    icon: '/favicon.svg', // Custom favicon based on user feedback
+    icon: '/favicon.svg',
   },
+};
+
+export const viewport = {
+  themeColor: "#0b0e0d",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
