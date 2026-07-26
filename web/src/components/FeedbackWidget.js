@@ -46,7 +46,7 @@ export default function FeedbackWidget() {
 
       {isOpen && (
         <div className="fixed bottom-20 right-6 w-80 bg-ink border border-ink-line shadow-2xl rounded-sm z-50 overflow-hidden">
-          <div className="flex justify-between items-center p-3 border-b border-ink-line bg-ink-subtle">
+          <div className="flex justify-between items-center p-3 border-b border-ink-line bg-[#111513]">
             <h3 className="text-bone text-sm font-medium">Send Feedback</h3>
             <button
               onClick={() => setIsOpen(false)}
@@ -68,7 +68,7 @@ export default function FeedbackWidget() {
                 <select
                   value={type}
                   onChange={(e) => setType(e.target.value)}
-                  className="bg-ink-subtle border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate"
+                  className="bg-[#111513] border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate"
                 >
                   <option value="general">General Feedback</option>
                   <option value="feature">Feature Request</option>
@@ -80,7 +80,7 @@ export default function FeedbackWidget() {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="What's on your mind?"
                   rows={4}
-                  className="bg-ink-subtle border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate resize-none"
+                  className="bg-[#111513] border border-ink-line text-bone text-sm rounded-sm p-2 outline-none focus:border-signal-slate resize-none"
                   required
                 />
 
