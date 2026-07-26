@@ -9,6 +9,7 @@ import authRoutes from "./routes/auth.js";
 import challengeRoutes from "./routes/challenges.js";
 import submissionRoutes from "./routes/submissions.js";
 import profileRoutes from "./routes/profile.js";
+import feedbackRoutes from "./routes/feedback.js";
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
 
 const app = express();
@@ -32,6 +33,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/challenges", challengeRoutes);
 app.use("/api/submissions", submissionRoutes);
 app.use("/api/profile", profileRoutes);
+app.use("/api/feedback", feedbackRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

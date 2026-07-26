@@ -54,4 +54,5 @@ export const api = {
   getBalance: () => request("/profile/balance"),
   publicProfile: (id) => request(`/profile/${id}`, { auth: false }),
   recentRewardsFeed: () => request("/profile/feed/recent", { auth: false }),
+  submitFeedback: (payload) => request("/feedback", { method: "POST", body: payload }),
 };
