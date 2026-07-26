@@ -4,11 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../lib/auth";
 import { track } from "../../lib/analytics";
+import { connectFreighter } from "../../lib/stellar";
 
 export default function SignupPage() {
   const { signup } = useAuth();
   const router = useRouter();
-  const [form, setForm] = useState({ name: "", email: "", password: "", role: "learner" });
+  const [form, setForm] = useState({ name: "", email: "", password: "", role: "learner", walletAddress: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [createdUser, setCreatedUser] = useState(null);
@@ -37,9 +38,9 @@ export default function SignupPage() {
         </span>
         <h1 className="text-2xl font-medium mb-2">You're in, {createdUser.name}.</h1>
         <p className="text-bone-dim text-sm mb-8 leading-relaxed">
-          We generated a Stellar testnet wallet and funded it with test XLM
-          via Friendbot. This is your account's signing address — it's how
-          you'll receive rewards.
+          {form.walletAddress 
+            ? "Your connected wallet will be used for your account. This is your account's signing address — it's how you'll receive rewards."
+            : "We generated a Stellar testnet wallet and funded it with test XLM via Friendbot. This is your account's signing address — it's how you'll receive rewards."}
         </p>
 
         <div className="ledger">
@@ -67,7 +68,7 @@ export default function SignupPage() {
     <div className="max-w-md mx-auto px-6 py-20">
       <h1 className="text-2xl font-medium mb-1">Open an account</h1>
       <p className="text-bone-dim text-sm mb-8">
-        A Stellar wallet is created and funded for you automatically.
+        Connect your Stellar wallet or leave it empty to create one automatically.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -120,6 +121,32 @@ export default function SignupPage() {
                 {role}
               </button>
             ))}
+          </div>
+        </Field>
+
+        <Field label="Stellar Wallet (Optional)">
+          <div className="flex gap-2">
+            <input
+              type="text"
+              value={form.walletAddress}
+              onChange={(e) => setForm({ ...form, walletAddress: e.target.value })}
+              className="field-input flex-1 font-mono text-xs"
+              placeholder="Leave empty to auto-generate"
+            />
+            <button
+              type="button"
+              onClick={async () => {
+                try {
+                  const addr = await connectFreighter();
+                  setForm({ ...form, walletAddress: addr });
+                } catch (err) {
+                  setError(err.message);
+                }
+              }}
+              className="px-4 border border-ink-line text-bone-dim hover:text-signal-gold hover:border-signal-gold text-xs font-mono uppercase rounded-sm transition-colors"
+            >
+              Connect
+            </button>
           </div>
         </Field>
 

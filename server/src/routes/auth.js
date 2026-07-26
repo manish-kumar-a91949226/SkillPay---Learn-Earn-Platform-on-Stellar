@@ -16,7 +16,7 @@ function signToken(user) {
 
 router.post("/signup", async (req, res, next) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, walletAddress } = req.body;
 
     if (!name || !email || !password || !role) {
       return res.status(400).json({ error: "name, email, password, and role are required" });
@@ -40,7 +40,7 @@ router.post("/signup", async (req, res, next) => {
       email: email.toLowerCase(),
       password: passwordHash,
       role,
-      walletAddress: publicKey,
+      walletAddress: walletAddress || publicKey,
       walletSecret: secretKey,
     });
 
